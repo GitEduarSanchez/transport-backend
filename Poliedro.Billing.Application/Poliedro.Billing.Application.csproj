@@ -19,4 +19,8 @@
     <ProjectReference Include="..\Poliedro.Billing.Domain\Poliedro.Billing.Domain.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="Server\Queries\" />
+  </ItemGroup>
+
 </Project>

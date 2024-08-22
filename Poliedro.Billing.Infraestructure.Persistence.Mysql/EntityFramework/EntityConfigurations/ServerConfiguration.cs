@@ -16,9 +16,5 @@ public class ServerConfiguration
         builder.Property(x => x.DbUsername).HasColumnName("db_username");
         builder.Property(x => x.DbPassword).HasColumnName("db_password");
         builder.Property(x => x.CreationDate).HasColumnName("creation_date");
-
-        builder.HasMany(x => x.clientsBillingElectronic)
-            .WithOne(x => x.Server)
-            .HasForeignKey(x => x.ServerId);
     }
 }

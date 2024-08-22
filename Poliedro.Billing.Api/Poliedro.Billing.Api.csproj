@@ -21,8 +21,6 @@
   <ItemGroup>
     <ProjectReference Include="..\Poliedro.Billing.Application\Poliedro.Billing.Application.csproj" />
     <ProjectReference Include="..\Poliedro.Billing.Domain\Poliedro.Billing.Domain.csproj" />
-    <ProjectReference Include="..\Poliedro.Billing.Infraestructure.External.Plemsi\Poliedro.Billing.Infraestructure.External.Plemsi.csproj" />
-    <ProjectReference Include="..\Poliedro.Billing.Infraestructure.External.TNS\Poliedro.Billing.Infraestructure.External.TNS.csproj" />
     <ProjectReference Include="..\Poliedro.Billing.Infraestructure.Persistence.Mysql\Poliedro.Billing.Infraestructure.Persistence.Mysql.csproj" />
     <ProjectReference Include="..\WorkerServiceBilling\WorkerServiceBilling.csproj" />
   </ItemGroup>

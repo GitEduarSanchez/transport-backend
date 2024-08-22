@@ -1,6 +1,4 @@
-﻿using Poliedro.Billing.Domain.ClientBillingElectronic.Entities;
-
-namespace Poliedro.Billing.Domain.Server.Entities;
+﻿namespace Poliedro.Billing.Domain.Server.Entities;
 
 public class ServerEntity
 {
@@ -10,5 +8,4 @@ public class ServerEntity
     public string DbUsername { get; set; } = default!;
     public string DbPassword { get; set; } = default!;
     public DateTime CreationDate { get; set; } = default!;
-    public ICollection<ClientBillingElectronicEntity> clientsBillingElectronic { get; set; } = default!;
 }
