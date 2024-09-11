@@ -21,6 +21,7 @@
 
   <ItemGroup>
     <Folder Include="Server\Queries\" />
+    <Folder Include="Server\Validator\" />
   </ItemGroup>
 
 </Project>

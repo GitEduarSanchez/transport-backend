@@ -10,8 +10,7 @@ namespace Poliedro.Billing.Api.Controllers.v1.Server
     [Route("api/[controller]")]
     [ApiController]
     [TypeFilter(typeof(ExceptionManager))]
-    public class ServerController(IMediator mediator,
-        IValidator<CreateServerCommand> validator) : ControllerBase
+    public class ServerController(IMediator mediator) : ControllerBase
     {
         [HttpGet("{id}")]
         public string Get(int id)
@@ -24,11 +23,6 @@ namespace Poliedro.Billing.Api.Controllers.v1.Server
                 
         public async Task<IActionResult> Create([FromBody] CreateServerCommand command)
         {
-            var validationResult = await ValidateCommandAsync(command);
-            if (!validationResult.IsValid)
-            {
-                return HandleValidationErrors(validationResult.Errors);
-            }
             await mediator.Send(command);
             return CreatedAtAction(null, null);
         }
@@ -42,11 +36,6 @@ namespace Poliedro.Billing.Api.Controllers.v1.Server
         [HttpDelete("{id}")]
         public void Delete(int id)
         {
-        }
-
-        private async Task<FluentValidation.Results.ValidationResult> ValidateCommandAsync(CreateServerCommand command)
-        {
-            return await validator.ValidateAsync(command);
         }
 
         private IActionResult HandleValidationErrors(List<ValidationFailure> errors)
