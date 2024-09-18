@@ -16,15 +16,15 @@ public static class DependencyInjectionService
 {
     public static IServiceCollection AddPersistence(this IServiceCollection services, IConfiguration configuration)
     {
-        var connectionString = configuration.GetConnectionString("MysqlConnection");
+        var connectionString = Environment.GetEnvironmentVariable("MYSQL_CONNECTION") ?? configuration.GetConnectionString("MysqlConnection");
         services.AddDbContext<DataBaseContext>(
             options => options.UseMySql(connectionString, ServerVersion.AutoDetect(connectionString)
         ));
-    
+
         services.AddScoped<IServerDomainService, ServerDomainService>();
         services.AddScoped<IServerRepository, ServerRepository>();
         services.AddTransient<IMessageProvider, MessageProvider>();
-       
+
         return services;
     }
 }
