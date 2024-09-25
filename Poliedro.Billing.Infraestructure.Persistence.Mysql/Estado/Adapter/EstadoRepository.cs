@@ -2,13 +2,13 @@
 using Poliedro.Billing.Domain.Conductor.Ports;
 using Poliedro.Billing.Infraestructure.Persistence.Mysql.Context;
 
-namespace Poliedro.Billing.Infraestructure.Persistence.Mysql.Conductor.Adapter;
+namespace Poliedro.Billing.Infraestructure.Persistence.Mysql.Estado.Adapter;
 
-public class ConductorRepository(DataBaseContext context) : IConductorRepository
+public class EstadoRepository(DataBaseContext context) : IEstadoRepository
 {
-    public async Task<bool> SaveAsync(ConductorEntity conductor)
+    public async Task<bool> SaveAsync(EstadoEntity estado)
     {
-        await context.Conductor.AddAsync(conductor);
+        await context.Estado.AddAsync(estado);
         return  await context.SaveChangesAsync() > 0;
     }
 }

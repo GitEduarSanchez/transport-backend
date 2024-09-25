@@ -2,7 +2,7 @@
 
 namespace Poliedro.Billing.Domain.Conductor.Ports;
 
-public interface IConductorRepository
+public interface IEstadoRepository
 {
-    Task<bool> SaveAsync(ConductorEntity conductor);
+    Task<bool> SaveAsync(EstadoEntity estado);
 }

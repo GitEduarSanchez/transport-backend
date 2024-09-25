@@ -2,4 +2,4 @@
 
 namespace Poliedro.Billing.Application.Conductor.Commands.CreateServerCommand;
 
-public record CreateConductorCommand(string Name) : IRequest<bool>;
+public record CreateEstadoCommand(string Descripcion) : IRequest<bool>;
