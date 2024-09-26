@@ -1,8 +1,8 @@
-﻿using Poliedro.Billing.Domain.Conductor.Entities;
+﻿using Poliedro.Billing.Domain.Destino.Entities;
 
-namespace Poliedro.Billing.Domain.Conductor.Ports;
+namespace Poliedro.Billing.Domain.Destino.Ports;
 
 public interface IDestinoRepository
 {
-    Task<bool> SaveAsync(DestinoEntity conductor);
+    Task<bool> SaveAsync(DestinoEntity Destino);
 }
