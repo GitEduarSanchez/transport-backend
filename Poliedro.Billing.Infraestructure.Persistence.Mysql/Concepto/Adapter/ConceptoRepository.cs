@@ -4,11 +4,11 @@ using Poliedro.Billing.Infraestructure.Persistence.Mysql.Context;
 
 namespace Poliedro.Billing.Infraestructure.Persistence.Mysql.Conductor.Adapter;
 
-public class ConductorRepository(DataBaseContext context) : IConductorRepository
+public class ConceptoRepository(DataBaseContext context) : IConceptoRepository
 {
-    public async Task<bool> SaveAsync(ConductorEntity conductor)
+    public async Task<bool> SaveAsync(ConceptoEntity concepto)
     {
-        await context.Conductor.AddAsync(conductor);
+        await context.Conductor.AddAsync(concepto);
         return  await context.SaveChangesAsync() > 0;
     }
 }
