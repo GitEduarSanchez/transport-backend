@@ -1,10 +1,10 @@
-﻿using Poliedro.Billing.Domain.Conductor.Entities;
-using Poliedro.Billing.Domain.Conductor.Ports;
+﻿using Poliedro.Billing.Domain.ControlViajeProducto.Entities;
+using Poliedro.Billing.Domain.ControlViajeProducto.Ports;
 using Poliedro.Billing.Infraestructure.Persistence.Mysql.Context;
 
 namespace Poliedro.Billing.Infraestructure.Persistence.Mysql.Conductor.Adapter;
 
-public class ControlViajeProductopository(DataBaseContext context) : IControlViajeProductoRepository
+public class ControlViajeProductoRepository(DataBaseContext context) : IControlViajeProductoRepository
 {
     public async Task<bool> SaveAsync(ControlViajeProductoEntity controlViajeProducto )
     {
