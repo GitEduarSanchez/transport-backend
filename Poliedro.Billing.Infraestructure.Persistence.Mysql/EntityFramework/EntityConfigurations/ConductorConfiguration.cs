@@ -8,7 +8,7 @@ public class ConductorConfiguration
 {
     public ConductorConfiguration(EntityTypeBuilder<ConductorEntity> builder)
     {
-        builder.ToTable("conductor");
+        builder.ToTable("Conductor");
         builder.HasKey(x => x.Id);
         builder.Property(x => x.Id).HasColumnName("idconductor");
         builder.Property(x => x.Name).HasColumnName("nombre");
