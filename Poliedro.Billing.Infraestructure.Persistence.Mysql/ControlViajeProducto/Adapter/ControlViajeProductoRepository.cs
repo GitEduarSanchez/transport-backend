@@ -4,7 +4,7 @@ using Poliedro.Billing.Infraestructure.Persistence.Mysql.Context;
 
 namespace Poliedro.Billing.Infraestructure.Persistence.Mysql.Conductor.Adapter;
 
-public class ControlViajeProductopository(DataBaseContext context) : IConductorRepository
+public class ControlViajeProductopository(DataBaseContext context) : IControlViajeProductoRepository
 {
     public async Task<bool> SaveAsync(ControlViajeProductoEntity controlViajeProducto )
     {
