@@ -1,6 +1,6 @@
 ﻿using System.ComponentModel.DataAnnotations;
 
-namespace Poliedro.Billing.Domain.Conductor.Entities;
+namespace Poliedro.Billing.Domain.Concepto.Entities;
 
 public class ConceptoEntity
 {
