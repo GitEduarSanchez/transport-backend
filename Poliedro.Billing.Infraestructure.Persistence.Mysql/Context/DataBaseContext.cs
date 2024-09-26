@@ -1,4 +1,5 @@
 ﻿using Microsoft.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore.Metadata.Builders;
 using Poliedro.Billing.Domain.Conductor.Entities;
 using Poliedro.Billing.Domain.Producto.Entities;
 using Poliedro.Billing.Infraestructure.Persistence.Mysql.EntityFramework.EntityConfigurations;
@@ -20,5 +21,15 @@ public class DataBaseContext(DbContextOptions options) : DbContext(options)
     {
         new ConductorConfiguration(modelBuilder.Entity<ConductorEntity>());
         new ProductoConfiguration(modelBuilder.Entity<ProductoEntity>());
+    }
+}
+
+internal class ProductoConfiguration
+{
+    private EntityTypeBuilder<ProductoEntity> entityTypeBuilder;
+
+    public ProductoConfiguration(EntityTypeBuilder<ProductoEntity> entityTypeBuilder)
+    {
+        this.entityTypeBuilder = entityTypeBuilder;
     }
 }
