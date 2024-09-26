@@ -1,8 +1,9 @@
-﻿using Poliedro.Billing.Domain.Conductor.Entities;
+﻿using Poliedro.Billing.Domain.Producto.Entities;
 
-namespace Poliedro.Billing.Domain.Conductor.Ports;
+namespace Poliedro.Billing.Domain.Producto.Ports;
 
-public interface IConductorRepository
+public interface IProductoRepository
 {
-    Task<bool> SaveAsync(ConductorEntity conductor);
+    Task<bool> SaveAsync(ProductoEntity producto);
+    Task<bool> SaveAsync(object producto);
 }

@@ -1,15 +1,16 @@
 ﻿using MediatR;
-using Poliedro.Billing.Application.Conductor.Commands.CreateServerCommand;
+using Poliedro.Billing.Application.Producto.Commands.CreateServerCommand;
 using Poliedro.Billing.Domain.Conductor.Entities;
-using Poliedro.Billing.Domain.Conductor.Ports;
+using Poliedro.Billing.Domain.Producto.Entities;
+using Poliedro.Billing.Domain.Producto.Ports;
 
-namespace Poliedro.Billing.Application.Conductor.Handle;
+namespace Poliedro.Billing.Application.Producto.Handle;
 
-public class ConductorHandle(IConductorRepository _conductorRepository) : IRequestHandler<CreateConductorCommand, bool>
+public class ProductoHandle(IProductoRepository _ProductoRepository) : IRequestHandler<CreateProductoCommand, bool>
 {
-    public async Task<bool> Handle(CreateConductorCommand request, CancellationToken cancellationToken)
+    public async Task<bool> Handle(CreateProductoCommand request, CancellationToken cancellationToken)
     {
-        ConductorEntity conductor = new() { Name = request.Name };
-        return await _conductorRepository.SaveAsync(conductor);
+        ProductoEntity producto = new ProductoEntity() { idProducto};
+        return await _ProductoRepository.SaveAsync(producto);
     }
 }

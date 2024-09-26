@@ -1,5 +1,5 @@
 ﻿using MediatR;
 
-namespace Poliedro.Billing.Application.Conductor.Commands.CreateServerCommand;
+namespace Poliedro.Billing.Application.Producto.Commands.CreateServerCommand;
 
-public record CreateConductorCommand(string Name) : IRequest<bool>;
+public record CreateProductoCommand(int idProducto, String descripcion, int UnidadMedida) : IRequest<bool>;
