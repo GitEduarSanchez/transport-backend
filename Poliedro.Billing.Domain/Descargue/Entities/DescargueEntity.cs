@@ -6,6 +6,6 @@ public class DescargueEntity
 {
     [Key]
     public int Id { get; set; }
-    public string Name { get; set; }
+    public required string descriocion { get; set; }
 
 }

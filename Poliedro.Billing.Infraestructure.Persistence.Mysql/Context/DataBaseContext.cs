@@ -8,7 +8,7 @@ public class DataBaseContext(DbContextOptions options) : DbContext(options)
 {
   
     public DbSet<ConductorEntity> Conductor { get; set; }
-
+    public DbSet<DescargueEntity> Descargue { get; set; }
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
         base.OnModelCreating(modelBuilder);
@@ -18,5 +18,6 @@ public class DataBaseContext(DbContextOptions options) : DbContext(options)
     private static void EntityConfiguration(ModelBuilder modelBuilder)
     {
         new ConductorConfiguration(modelBuilder.Entity<ConductorEntity>());
+        new DescargueConfiguration(modelBuilder.Entity<DescargueEntity>());
     }
 }
