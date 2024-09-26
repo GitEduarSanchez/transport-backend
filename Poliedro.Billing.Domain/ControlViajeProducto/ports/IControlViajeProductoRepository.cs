@@ -1,8 +1,8 @@
-﻿using Poliedro.Billing.Domain.Conductor.Entities;
+﻿using Poliedro.Billing.Domain.ControlViajeProducto.Entities;
 
-namespace Poliedro.Billing.Domain.Conductor.Ports;
+namespace Poliedro.Billing.Domain.ControlViajeProducto.Ports;
 
 public interface IControlViajeProductoRepository
 {
-    Task<bool> SaveAsync(ControlViajeProductoEntity controlViajeProducto);
+    Task<bool> SaveAsync(ControlViajeProductoEntity ControlViajeProducto);
 }
