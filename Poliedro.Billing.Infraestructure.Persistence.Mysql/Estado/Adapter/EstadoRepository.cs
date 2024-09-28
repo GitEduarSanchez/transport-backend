@@ -1,5 +1,4 @@
-﻿using Poliedro.Billing.Domain.Conductor.Entities;
-using Poliedro.Billing.Domain.Conductor.Ports;
+﻿
 using Poliedro.Billing.Domain.Estado.Entities;
 using Poliedro.Billing.Domain.Estado.Ports;
 using Poliedro.Billing.Infraestructure.Persistence.Mysql.Context;
