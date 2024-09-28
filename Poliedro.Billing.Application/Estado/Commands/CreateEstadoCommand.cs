@@ -2,4 +2,4 @@
 
 namespace Poliedro.Billing.Application.Estado.Commands.CreateServerCommand;
 
-public record CreateEstadorCommand(string Name) : IRequest<bool>;
+public record CreateEstadoCommand(string Descripcion) : IRequest<bool>;
