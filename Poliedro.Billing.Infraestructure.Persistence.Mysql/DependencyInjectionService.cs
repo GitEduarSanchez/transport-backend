@@ -20,6 +20,7 @@ public static class DependencyInjectionService
 
         services.AddTransient<IMessageProvider, MessageProvider>();
         services.AddTransient<IConductorRepository, ConductorRepository>();
+        services.AddTransient<IVehiculoRepository, VehiculoRepository>();
 
         return services;
     }

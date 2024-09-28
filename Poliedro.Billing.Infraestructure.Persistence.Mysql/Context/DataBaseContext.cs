@@ -8,6 +8,8 @@ public class DataBaseContext(DbContextOptions options) : DbContext(options)
 {
   
     public DbSet<ConductorEntity> Conductor { get; set; }
+   public DbSet<VehiculoEntity> Vehiculo { get; set; }
+     
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
@@ -18,5 +20,6 @@ public class DataBaseContext(DbContextOptions options) : DbContext(options)
     private static void EntityConfiguration(ModelBuilder modelBuilder)
     {
         new ConductorConfiguration(modelBuilder.Entity<ConductorEntity>());
+        new VehiculoConfiguration(modelBuilder.Entity<VehiculoEntity>());
     }
 }
