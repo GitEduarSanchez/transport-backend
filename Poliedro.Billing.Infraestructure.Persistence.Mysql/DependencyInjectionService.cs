@@ -24,6 +24,7 @@ public static class DependencyInjectionService
         services.AddTransient<IConductorRepository, ConductorRepository>();
         services.AddTransient<IConceptoRepository, ConceptoRepository>();
         
+        
 
         return services;
     }
