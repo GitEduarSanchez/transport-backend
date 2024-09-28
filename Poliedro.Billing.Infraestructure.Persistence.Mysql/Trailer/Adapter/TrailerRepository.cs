@@ -1,14 +1,14 @@
-﻿using Poliedro.Billing.Domain.Conductor.Entities;
-using Poliedro.Billing.Domain.Conductor.Ports;
+﻿using Poliedro.Billing.Domain.Trailer.Entities;
+using Poliedro.Billing.Domain.Trailer.Ports;
 using Poliedro.Billing.Infraestructure.Persistence.Mysql.Context;
 
 namespace Poliedro.Billing.Infraestructure.Persistence.Mysql.Trailer.Adapter;
 
-public class trailerRepository(DataBaseContext context) : ITrailerRepository
+public class TrailerRepository(DataBaseContext context) : ITrailerRepository
 {
-    public async Task<bool> SaveAsync(TrailerEntity trailer)
+    public async Task<bool> SaveAsync(TrailerEntity Trailer)
     {
-        await context.Conductor.AddAsync(Trailer);
+        await context.Trailer.AddAsync(Trailer);
         return  await context.SaveChangesAsync() > 0;
     }
 }
