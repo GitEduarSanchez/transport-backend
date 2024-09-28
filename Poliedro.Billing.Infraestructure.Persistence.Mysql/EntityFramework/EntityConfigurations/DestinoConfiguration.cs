@@ -9,8 +9,8 @@ public class DestinoConfiguration
     public DestinoConfiguration(EntityTypeBuilder<DestinoEntity> builder)
     {
         builder.ToTable("Destino");
-        builder.HasKey(x => x.IdDestino);
-        builder.Property(x => x.IdDestino).HasColumnName("idDestino");
-        builder.Property(x => x.Descripcion).HasColumnName("Descripcion");
+        builder.HasKey(x => x.idDestino);
+        builder.Property(x => x.idDestino).HasColumnName("idDestino");
+        builder.Property(x => x.Descripcion).HasColumnName("Desripcion");
     }
 }
