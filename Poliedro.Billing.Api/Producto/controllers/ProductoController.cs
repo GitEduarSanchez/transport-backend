@@ -20,14 +20,14 @@ namespace Poliedro.Billing.Api.Controllers.v1.Server
 
         [HttpPost]
                 
-        public async Task<ActionResult<bool>> Create([FromBody] CreateConductorCommand command)
+        public async Task<ActionResult<bool>> Create([FromBody] CreateProductoCommand command)
         {
             await mediator.Send(command);
             return CreatedAtAction(null, null);
         }
        
         [HttpPut("{id}")]
-        public void Put(int id, [FromBody] CreateConductorCommand command)
+        public void Put(int id, [FromBody] CreateProductoCommand command)
         {
         }
 

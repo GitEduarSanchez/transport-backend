@@ -10,7 +10,7 @@ public class DataBaseContext(DbContextOptions options) : DbContext(options)
 {
   
     public DbSet<ConductorEntity> Conductor { get; set; }
-    public DbSet<ConductorEntity> Producto { get; set; } 
+    public DbSet<ProductoEntity> Producto { get; set; } 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
         base.OnModelCreating(modelBuilder);
@@ -24,12 +24,5 @@ public class DataBaseContext(DbContextOptions options) : DbContext(options)
     }
 }
 
-internal class ProductoConfiguration
-{
-    private EntityTypeBuilder<ProductoEntity> entityTypeBuilder;
 
-    public ProductoConfiguration(EntityTypeBuilder<ProductoEntity> entityTypeBuilder)
-    {
-        this.entityTypeBuilder = entityTypeBuilder;
-    }
-}
+   

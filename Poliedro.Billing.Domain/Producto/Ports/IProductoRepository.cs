@@ -5,5 +5,4 @@ namespace Poliedro.Billing.Domain.Producto.Ports;
 public interface IProductoRepository
 {
     Task<bool> SaveAsync(ProductoEntity producto);
-    Task<bool> SaveAsync(object producto);
 }
