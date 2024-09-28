@@ -1,5 +1,8 @@
 ﻿using MediatR;
 
-namespace Poliedro.Billing.Application.Conductor.Commands.CreateServerCommand;
+namespace Poliedro.Billing.Application.Descargue.Commands.CreateServerCommand;
 
-public record CreateDescargueCommand(string Name) : IRequest<bool>;
+public record CreateDescargueCommand(string Name) : IRequest<bool>
+{
+    internal string descriocion;
+}
