@@ -1,5 +1,4 @@
 ﻿using Microsoft.EntityFrameworkCore;
-using Microsoft.EntityFrameworkCore.Metadata.Builders;
 using Poliedro.Billing.Domain.Conductor.Entities;
 using Poliedro.Billing.Domain.ControlViaje.Entities;
 using Poliedro.Billing.Infraestructure.Persistence.Mysql.EntityFramework.EntityConfigurations;
@@ -10,7 +9,6 @@ public class DataBaseContext(DbContextOptions options) : DbContext(options)
 {
 
     public DbSet<ConductorEntity> Conductor { get; set; }
-    public DbSet<VehiculoEntity> Vehiculo { get; set; }
 
     public DbSet<ControlViajeEntity> ControlViaje { get; set; }
 
@@ -23,17 +21,7 @@ public class DataBaseContext(DbContextOptions options) : DbContext(options)
     private static void EntityConfiguration(ModelBuilder modelBuilder)
     {
         new ConductorConfiguration(modelBuilder.Entity<ConductorEntity>());
-        new VehiculoConfiguration(modelBuilder.Entity<VehiculoEntity>());
         new ControlViajeConfiguration(modelBuilder.Entity<ControlViajeEntity>());
     }
 }
 
-internal class VehiculoConfiguration
-{
-    private EntityTypeBuilder<VehiculoEntity> entityTypeBuilder;
-
-    public VehiculoConfiguration(EntityTypeBuilder<VehiculoEntity> entityTypeBuilder)
-    {
-        this.entityTypeBuilder = entityTypeBuilder;
-    }
-}
