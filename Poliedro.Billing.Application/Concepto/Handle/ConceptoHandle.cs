@@ -9,7 +9,7 @@ public class ConceptoHandle(IConceptoRepository _ConceptoRepository) : IRequestH
 {
     public async Task<bool> Handle(CreateConceptoCommand request, CancellationToken cancellationToken)
     {
-        ConceptoEntity Concepto = new() { Descripcion = request.Descripcion };
+        ConceptoEntity Concepto = new() { descripcion = request.descripcion };
         return await _ConceptoRepository.SaveAsync(Concepto);
     }
 }

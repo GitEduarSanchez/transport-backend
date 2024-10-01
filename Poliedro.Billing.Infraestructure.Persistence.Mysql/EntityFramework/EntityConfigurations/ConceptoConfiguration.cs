@@ -9,9 +9,9 @@ public class ConceptoConfiguration
 {
     public ConceptoConfiguration(EntityTypeBuilder<ConceptoEntity> builder)
     {
-        builder.ToTable("Concepto");
+        builder.ToTable("concepto");
         builder.HasKey(x => x.IdConcepto);
-        builder.Property(x => x.IdConcepto).HasColumnName("IdConcepto");
-        builder.Property(x => x.Descripcion).HasColumnName("Descripcion");
+        builder.Property(x => x.IdConcepto).HasColumnName("idconcepto");
+        builder.Property(x => x.descripcion).HasColumnName("descripcion");
     }
 }
