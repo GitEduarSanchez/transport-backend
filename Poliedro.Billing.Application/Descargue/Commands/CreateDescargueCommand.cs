@@ -2,7 +2,4 @@
 
 namespace Poliedro.Billing.Application.Descargue.Commands.CreateServerCommand;
 
-public record CreateDescargueCommand(string Name) : IRequest<bool>
-{
-    internal string descriocion;
-}
+public record CreateDescargueCommand(int Iddescripcion, string descriocion) : IRequest<bool>;

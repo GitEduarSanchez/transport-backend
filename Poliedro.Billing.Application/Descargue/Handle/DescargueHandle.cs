@@ -9,7 +9,7 @@ public class DescargueHandle(IDescargueRepository _DescargueRepository) : IReque
 {
     public async Task<bool> Handle(CreateDescargueCommand request, CancellationToken cancellationToken)
     {
-        DescargueEntity descargue = new() { descriocion = request.descriocion };
-        return await _DescargueRepository.SaveAsync(descargue);
+        DescargueEntity Descargue = new() { descriocion = request.descriocion };
+        return await _DescargueRepository.SaveAsync(Descargue);
     }
 }

@@ -1,5 +1,6 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using Poliedro.Billing.Domain.Conductor.Entities;
+using Poliedro.Billing.Domain.Descargue.Entities;
 using Poliedro.Billing.Infraestructure.Persistence.Mysql.EntityFramework.EntityConfigurations;
 
 namespace Poliedro.Billing.Infraestructure.Persistence.Mysql.Context;

@@ -5,11 +5,22 @@ using Poliedro.Billing.Infraestructure.Persistence.Mysql.Context;
 
 namespace Poliedro.Billing.Infraestructure.Persistence.Mysql.Descargue.Adapter;
 
-public class DescargueRepository(DataBaseContext context) : IDescargueRepository
+
+public class ControlViajeRepository(DataBaseContext _context) : IDescargueRepository
 {
-    public async Task<bool> SaveAsync(DescargueEntity descargue)
+    public async Task<IEnumerable<DescargueEntity>> GetAllAsync()
     {
-        await context.Descargue.AllAsync(descargue);
-        return  await context.SaveChangesAsync() > 0;
+        return await _context.Descargue.ToListAsync();
+    }
+
+    public async Task<bool> SaveAsync(DescargueEntity controlViaje)
+    {
+        await _context.Descargue.AddAsync(Descargue);
+        return  await _context.SaveChangesAsync() > 0;
+    }
+
+    public Task<bool> SaveAsync(object descargue)
+    {
+        throw new NotImplementedException();
     }
 }
