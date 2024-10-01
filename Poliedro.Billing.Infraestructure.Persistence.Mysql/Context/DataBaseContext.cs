@@ -22,5 +22,6 @@ public class DataBaseContext(DbContextOptions options) : DbContext(options)
     {
         new ConductorConfiguration(modelBuilder.Entity<ConductorEntity>());
         new DestinoConfiguration(modelBuilder.Entity<DestinoEntity>());
+        
     }
 }
