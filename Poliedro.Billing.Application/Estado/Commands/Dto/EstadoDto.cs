@@ -1,4 +1,3 @@
 ﻿namespace Poliedro.Billing.Application.Estado.Dto;
 
-public record EstadoDto(int Id, string Name);
-
+public record EstadoDto(int Id, string Descripcion);

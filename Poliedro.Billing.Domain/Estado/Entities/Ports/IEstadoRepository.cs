@@ -5,5 +5,6 @@ namespace Poliedro.Billing.Domain.Estado.Ports;
 
 public interface IEstadoRepository
 {
+    Task<IEnumerable<object>> GetAllAsync();
     Task<bool> SaveAsync(EstadoEntity estado);
 }
