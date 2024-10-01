@@ -10,7 +10,7 @@ public class CiudadHandle(ICiudadRepository _ciudadRepository) : IRequestHandler
 {
     public async Task<bool> Handle(CreateCiudadCommand request, CancellationToken cancellationToken)
     {
-        CiudadEntity ciudad = new() { Ciudad = request.descripcion, Iddepartamento=request.iddepartamento };
+        CiudadEntity ciudad = new() { Descripcion = request.descripcion, Iddepartamento=request.iddepartamento };
         return await _ciudadRepository.SaveAsync(ciudad); 
     }
     
