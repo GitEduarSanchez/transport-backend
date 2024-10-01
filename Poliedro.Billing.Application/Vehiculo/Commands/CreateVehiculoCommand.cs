@@ -1,5 +1,5 @@
 ﻿using MediatR;
 
-namespace Poliedro.Billing.Application.Conductor.Commands.CreateServerCommand;
+namespace Poliedro.Billing.Application.Vehiculo.Commands.CreateServerCommand;
 
-public record CreateVehiculoCommand(string Name) : IRequest<bool>;
+public record CreateVehiculoCommand(string placa,int idmarca,int idtipodevehiculo) : IRequest<bool>;
