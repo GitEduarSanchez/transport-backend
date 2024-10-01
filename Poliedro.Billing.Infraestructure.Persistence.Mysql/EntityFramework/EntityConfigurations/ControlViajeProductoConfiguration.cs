@@ -8,10 +8,10 @@ public class ControlViajeProductoConfiguration
 {
     public ControlViajeProductoConfiguration(EntityTypeBuilder<ControlViajeProductoEntity> builder)
     {
-        builder.ToTable("ControlViaje_Producto");
+        builder.ToTable("controlviaje_producto");
         builder.HasKey(x => x.idControlViajeProducto);
-        builder.Property(x => x.idControlViajeProducto).HasColumnName("idControlViajeProducto");
-        builder.Property(x => x.idControlViaje).HasColumnName("idControlViaje");
-        builder.Property(x => x.idProducto).HasColumnName("idProducto");
+        builder.Property(x => x.idControlViajeProducto).HasColumnName("idcontrolviaje_producto");
+        builder.Property(x => x.idControlViaje).HasColumnName("idcontrolviaje");
+        builder.Property(x => x.idProducto).HasColumnName("idproducto");
     }
 }
