@@ -9,7 +9,6 @@ public class DataBaseContext(DbContextOptions options) : DbContext(options)
 {
 
     public DbSet<ConductorEntity> Conductor { get; set; }
-
     public DbSet<ControlViajeEntity> ControlViaje { get; set; }
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
