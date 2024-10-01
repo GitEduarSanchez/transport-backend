@@ -6,7 +6,7 @@ public class ViajeOrigenEntity
 {
     [Key]
     public int idControlViajeOrigen { get; set; }
-    public int idControlViajee { get; set; }
+    public int idControlViaje { get; set; }
     public int idOrigen { get; set; }
     public int idCiudad { get; set; }
 }

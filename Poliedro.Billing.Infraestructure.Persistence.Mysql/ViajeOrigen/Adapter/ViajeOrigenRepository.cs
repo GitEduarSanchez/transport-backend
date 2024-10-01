@@ -2,7 +2,7 @@
 using Poliedro.Billing.Domain.ViajeOrigen.Ports;
 using Poliedro.Billing.Infraestructure.Persistence.Mysql.Context;
 
-namespace Poliedro.Billing.Infraestructure.Persistence.Mysql.Conductor.Adapter;
+namespace Poliedro.Billing.Infraestructure.Persistence.Mysql.ViajeOrigen.Adapter;
 
 public class ViajeOrigenRepository(DataBaseContext context) : IViajeOrigenRepository
 {
