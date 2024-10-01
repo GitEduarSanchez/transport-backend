@@ -9,7 +9,7 @@ namespace Poliedro.Billing.Api.Controllers.v1.Server
     [Route("api/[controller]")]
     [ApiController]
     [TypeFilter(typeof(ExceptionManager))]
-    public class ViajeOrigenController(IMediator mediator) : ControllerBase
+    public class ViajeOrigenControllers(IMediator mediator) : ControllerBase
     {
         [HttpGet("{id}")]
         public string Get(int id)

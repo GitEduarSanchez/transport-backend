@@ -9,7 +9,7 @@ public class ViajeOrigenHandle(IViajeOrigenRepository _viajeOrigenRepository) : 
 {
     public async Task<bool> Handle(CreateViajeOrigenCommand request, CancellationToken cancellationToken)
     {
-        ViajeOrigenEntity viajeOrigen = new() { idControlViajeOrigen = request.idControlViajeOrigen };
+        ViajeOrigenEntity viajeOrigen = new() { IdControlViaje = request.IdControlViaje};
         return await _viajeOrigenRepository.SaveAsync(viajeOrigen);
     }
 }
