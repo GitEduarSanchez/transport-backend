@@ -12,7 +12,7 @@ public class CiudadConfiguration
         builder.ToTable("ciudad");
         builder.HasKey(x => x.Id);
         builder.Property(x => x.Id).HasColumnName("idciudad");
-        builder.Property(x => x.Ciudad).HasColumnName("descripcion");
+        builder.Property(x => x.Descripcion).HasColumnName("descripcion");
         builder.Property(x => x.Iddepartamento).HasColumnName("iddepartamento");
     }
 }

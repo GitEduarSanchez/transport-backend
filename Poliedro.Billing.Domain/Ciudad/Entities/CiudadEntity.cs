@@ -8,5 +8,5 @@ public class CiudadEntity
     public int Id { get; set; }
     public string Descripcion { get; set; }
     public int Iddepartamento { get; set; }
-    public object Ciudad { get; set; }
+   
 }
