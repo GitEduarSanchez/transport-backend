@@ -1,4 +1,5 @@
-﻿using Poliedro.Billing.Domain.Descargue.Entities;
+﻿using Microsoft.EntityFrameworkCore;
+using Poliedro.Billing.Domain.Descargue.Entities;
 using Poliedro.Billing.Domain.Descargue.Ports;
 using Poliedro.Billing.Infraestructure.Persistence.Mysql.Context;
 
@@ -6,9 +7,9 @@ namespace Poliedro.Billing.Infraestructure.Persistence.Mysql.Descargue.Adapter;
 
 public class DescargueRepository(DataBaseContext context) : IDescargueRepository
 {
-    public Task<IEnumerable<DescargueEntity>> GetAllAsync()
+    public async Task<IEnumerable<DescargueEntity>> GetAllAsync()
     {
-        throw new NotImplementedException();
+        return await DbContext.Descargue.ToListAsync();
     }
 
     public async Task<bool> SaveAsync(DescargueEntity descargue)
