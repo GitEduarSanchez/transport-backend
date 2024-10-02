@@ -23,7 +23,6 @@ public static class DependencyInjectionService
         services.AddTransient<IMessageProvider, MessageProvider>();
         services.AddTransient<IConductorRepository, ConductorRepository>();
         services.AddTransient<IDescargueRepository, DescargueRepository>();
-
         return services;
     }
 }
