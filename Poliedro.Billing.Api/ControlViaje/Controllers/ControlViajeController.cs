@@ -2,7 +2,9 @@
 using MediatR;
 using Microsoft.AspNetCore.Mvc;
 using Poliedro.Billing.Application.Common.Exeptions;
+using Poliedro.Billing.Application.ControlViaje.Query;
 using Poliedro.Billing.Application.ControlViaje.Commands.CreateServerCommand;
+using Poliedro.Billing.Application.ControlViaje.Dto;
 
 
 namespace Poliedro.Billing.Api.Controllers.v1.Server
@@ -12,6 +14,14 @@ namespace Poliedro.Billing.Api.Controllers.v1.Server
     [TypeFilter(typeof(ExceptionManager))]
     public class ControlViajeController(IMediator mediator) : ControllerBase
     {
+
+        
+        [HttpGet]
+        public async Task<IEnumerable<ControlViajeDto>> GetAll()
+        {
+            return await mediator.Send(new GetAllActuatorsQuery());
+        }
+
        
 
         [HttpGet("{id}")]
