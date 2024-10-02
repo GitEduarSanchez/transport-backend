@@ -5,11 +5,11 @@ using Poliedro.Billing.Domain.ViajeOrigen.Ports;
 
 namespace Poliedro.Billing.Application.ViajeOrigen.Handle;
 
-public class ViajeOrigenHandle(IViajeOrigenRepository _viajeOrigenRepository) : IRequestHandler<CreateViajeOrigenCommand, bool>
+public class ViajeOrigenHandle(IViajeOrigenRepository _viajeorigenRepository) : IRequestHandler<CreateViajeOrigenCommand, bool>
 {
     public async Task<bool> Handle(CreateViajeOrigenCommand request, CancellationToken cancellationToken)
     {
-        ViajeOrigenEntity viajeOrigen = new() { IdControlViaje = request.IdControlViaje};
-        return await _viajeOrigenRepository.SaveAsync(viajeOrigen);
+        ViajeOrigenEntity viajeorigen = new() { IdControlViaje = request.IdControlViaje, IdOrigen = request.IdOrigen, IdCiudad = request.IdCiudad};
+        return await _viajeorigenRepository.SaveAsync(viajeorigen);
     }
 }

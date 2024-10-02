@@ -2,7 +2,6 @@
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Poliedro.Billing.Domain.Conductor.Ports;
-
 using Poliedro.Billing.Domain.Ports;
 using Poliedro.Billing.Domain.ViajeOrigen.Ports;
 using Poliedro.Billing.Infraestructure.Persistence.Mysql.Adapter;
