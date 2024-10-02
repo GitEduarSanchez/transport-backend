@@ -1,18 +1,18 @@
 ﻿using MediatR;
-using Poliedro.Billing.Application.Conductor.Dto;
-using Poliedro.Billing.Domain.Conductor.Ports;
+using Poliedro.Billing.Application.Descargue.Dto;
+using Poliedro.Billing.Domain.Descargue.Ports;
 
-namespace Poliedro.Billing.Application.Conductor.Query;
+namespace Poliedro.Billing.Application.Descargue.Query;
 
-public class GetAllActuatorHandle(IConductorRepository _conductorRepository) : IRequestHandler<GetAllActuatorsQuery, IEnumerable<ConductorDto>>
+public class GetAllActuatorHandle(IDescargueRepository _DescargueRepository) : IRequestHandler<GetAllActuatorsQuery, IEnumerable<DescargueDto>>
 {
-    public async Task<IEnumerable<ConductorDto>> Handle(GetAllActuatorsQuery request, CancellationToken cancellationToken)
+    public async Task<IEnumerable<DescargueDto>> Handle(GetAllActuatorsQuery request, CancellationToken cancellationToken)
     {
-        var entities = await _conductorRepository.GetAllAsync();
-        return entities.Select(conductor => new ConductorDto
+        var entities = await _DescargueRepository.GetAllAsync();
+        return entities.Select(Descargue => new DescargueDto
         (
-            Id: conductor.Id,
-            Name: conductor.Name
+            Id: Descargue.Id,
+            descriocion: Descargue.descriocion
         ));
     }
 }
