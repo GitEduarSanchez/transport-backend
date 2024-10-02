@@ -11,7 +11,8 @@ public class DataBaseContext(DbContextOptions options) : DbContext(options)
   
     public DbSet<ConductorEntity> Conductor { get; set; }
     public DbSet<CiudadEntity> Ciudad { get; set; }
- public DbSet<VehiculoEntity> Vehiculo { get; set; }
+    public DbSet<v_ciudadEntity> v_ciudad { get; set; }
+    public DbSet<VehiculoEntity> Vehiculo { get; set; }
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {

@@ -3,13 +3,24 @@ using MediatR;
 using Microsoft.AspNetCore.Mvc;
 using Poliedro.Billing.Application.Common.Exeptions;
 using Poliedro.Billing.Application.Ciudad.Commands.CreateServerCommand;
+using Poliedro.Billing.Application.Ciudad.Dto;
+using Poliedro.Billing.Application.Ciudad.Query;
+
 namespace Poliedro.Billing.Api.Controllers.v1.Server
+
+
 {
     [Route("api/[controller]")]
     [ApiController]
     [TypeFilter(typeof(ExceptionManager))]
     public class CiudadController(IMediator mediator) : ControllerBase
     {
+        [HttpGet]
+        public async Task<IEnumerable<CiudadDto>> GetAll()
+        {
+            return await mediator.Send(new GetAllActuatorsQuery());
+        }
+
         [HttpGet("{id}")]
         public string Get(int id)
         {
