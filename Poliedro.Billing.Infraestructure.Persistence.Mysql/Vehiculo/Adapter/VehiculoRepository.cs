@@ -5,16 +5,16 @@ using Poliedro.Billing.Infraestructure.Persistence.Mysql.Context;
 
 namespace Poliedro.Billing.Infraestructure.Persistence.Mysql.Conductor.Adapter;
 
-public class ConductorRepository(DataBaseContext _context) : IConductorRepository
+public class VehiculoRepository(DataBaseContext _context) : IVehiculoRepository
 {
-    public async Task<IEnumerable<ConductorEntity>> GetAllAsync()
+    public async Task<IEnumerable<VehiculoEntity>> GetAllAsync()
     {
-        return await _context.Conductor.ToListAsync();
+        return await _context.Vehiculo.ToListAsync();
     }
 
-    public async Task<bool> SaveAsync(ConductorEntity conductor)
+    public async Task<bool> SaveAsync(VehiculoEntity Vehiculo)
     {
-        await _context.Conductor.AddAsync(conductor);
+        await _context.Vehiculo.AddAsync(Vehiculo);
         return  await _context.SaveChangesAsync() > 0;
     }
 }
