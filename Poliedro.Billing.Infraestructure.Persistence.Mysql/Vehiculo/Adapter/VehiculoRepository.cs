@@ -1,20 +1,20 @@
-﻿
+﻿using Microsoft.EntityFrameworkCore;
 using Poliedro.Billing.Domain.Vehiculo.Entities;
 using Poliedro.Billing.Domain.Vehiculo.Ports;
 using Poliedro.Billing.Infraestructure.Persistence.Mysql.Context;
 
-namespace Poliedro.Billing.Infraestructure.Persistence.Mysql.Conductor.Adapter;
+namespace Poliedro.Billing.Infraestructure.Persistence.Mysql.Vehiculo.Adapter;
 
-public class VehiculoRepository(DataBaseContext context) : IVehiculoRepository
+public class VehiculoRepository(DataBaseContext _context) : IVehiculoRepository
 {
-    public Task<IEnumerable<object>> GetAllAsync()
+    public async Task<IEnumerable<VehiculoEntity>> GetAllAsync()
     {
-        throw new NotImplementedException();
+        return await _context.Vehiculo.ToListAsync();
     }
 
     public async Task<bool> SaveAsync(VehiculoEntity Vehiculo)
     {
-        await context.Vehiculo.AddAsync(Vehiculo);
-        return  await context.SaveChangesAsync() > 0;
+        await _context.Vehiculo.AddAsync(Vehiculo);
+        return  await _context.SaveChangesAsync() > 0;
     }
 }
