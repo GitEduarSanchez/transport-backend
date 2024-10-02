@@ -9,10 +9,10 @@ public class ViajeOrigenConfiguration
     public ViajeOrigenConfiguration(EntityTypeBuilder<ViajeOrigenEntity> builder)
     {
         builder.ToTable("controlviaje_origen");
-        builder.HasKey(x => x.Id);
-        builder.Property(x => x.Id).HasColumnName("idcontrolviaje_origen");
+        builder.HasKey(x => x.IdControlViajeOrigen);
+        builder.Property(x => x.IdControlViajeOrigen).HasColumnName("idcontrolviaje_origen");
         builder.Property(x => x.IdControlViaje).HasColumnName("idcontrolViaje");
         builder.Property(x => x.IdOrigen).HasColumnName("idorigen");
-        builder.Property(x => x.IdCiudad).HasColumnName("idciudad");
+        builder.Property(x => x.IdCiudad).HasColumnName("idcuidad");
     }
 }
