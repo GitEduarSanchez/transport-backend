@@ -6,6 +6,11 @@ namespace Poliedro.Billing.Infraestructure.Persistence.Mysql.Conductor.Adapter;
 
 public class ControlViajeProductoRepository(DataBaseContext context) : IControlViajeProductoRepository
 {
+    public Task<IEnumerable<ControlViajeProductoEntity>> GetAllAsync()
+    {
+        throw new NotImplementedException();
+    }
+
     public async Task<bool> SaveAsync(ControlViajeProductoEntity controlViajeProducto )
     {
         await context.ControlViajeProducto.AddAsync(controlViajeProducto);
