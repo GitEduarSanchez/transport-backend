@@ -3,6 +3,8 @@ using MediatR;
 using Microsoft.AspNetCore.Mvc;
 using Poliedro.Billing.Application.Common.Exeptions;
 using Poliedro.Billing.Application.Estado.Commands.CreateServerCommand;
+using Poliedro.Billing.Application.Estado.Dto;
+using Poliedro.Billing.Application.Estado.Query;
 
 namespace Poliedro.Billing.Api.Controllers.v1.Server
 {
@@ -11,6 +13,12 @@ namespace Poliedro.Billing.Api.Controllers.v1.Server
     [TypeFilter(typeof(ExceptionManager))]
     public class EstadoController(IMediator mediator) : ControllerBase
     {
+          [HttpGet]
+        public async Task<IEnumerable<EstadoDto>> GetAll()
+        {
+            return await mediator.Send(new GetAllEstadoQuery());
+        }
+
         [HttpGet("{id}")]
         public string Get(int id)
         {
@@ -52,5 +60,5 @@ namespace Poliedro.Billing.Api.Controllers.v1.Server
         }
     }
 
-  
+
 }
