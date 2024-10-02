@@ -1,7 +1,7 @@
 ﻿using MediatR;
-using Poliedro.Billing.Application.Conductor.Dto;
+using Poliedro.Billing.Application.ControlViajeProducto.Dto;
 
-namespace Poliedro.Billing.Application.Conductor.Query;
+namespace Poliedro.Billing.Application.ControlViajeProducto.Query;
 
-public record GetAllActuatorsQuery: IRequest<IEnumerable<ConductorDto>>;
+public record GetAllControlViajeProductoQuery: IRequest<IEnumerable<ControlViajeProductoDto>>;
 

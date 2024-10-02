@@ -1,4 +1,4 @@
-﻿namespace Poliedro.Billing.Application.Conductor.Dto;
+﻿namespace Poliedro.Billing.Application.ControlViajeProducto.Dto;
 
-public record ConductorDto(int Id, string Name);
+public record ControlViajeProductoDto(int idControlViajeProducto, int idControlViaje, int idProducto);
 
