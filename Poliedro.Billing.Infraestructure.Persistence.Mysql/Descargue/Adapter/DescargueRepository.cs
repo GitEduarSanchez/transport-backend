@@ -6,7 +6,7 @@ namespace Poliedro.Billing.Infraestructure.Persistence.Mysql.Descargue.Adapter;
 
 public class DescargueRepository(DataBaseContext context) : IDescargueRepository
 {
-    public Task<IEnumerable<object>> GetAllAsync()
+    public Task<IEnumerable<DescargueEntity>> GetAllAsync()
     {
         throw new NotImplementedException();
     }
@@ -15,10 +15,5 @@ public class DescargueRepository(DataBaseContext context) : IDescargueRepository
     {
         await context.Descargue.AddAsync(descargue);
         return  await context.SaveChangesAsync() > 0;
-    }
-
-    public Task<bool> SaveAsync(object descargue)
-    {
-        throw new NotImplementedException();
     }
 }
