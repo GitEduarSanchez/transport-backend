@@ -2,4 +2,4 @@
 
 namespace Poliedro.Billing.Application.Vehiculo.Commands.CreateServerCommand;
 
-public record CreateVehiculoCommand(string placa,int idmarca,int idtipodevehiculo) : IRequest<bool>;
+public record CreateVehiculoCommand(string placa,int idmarca,int idtipovehiculo) : IRequest<bool>;

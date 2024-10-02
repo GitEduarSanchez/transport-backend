@@ -9,7 +9,7 @@ public class VehiculoHandle(IVehiculoRepository _VehiculoRepository) : IRequestH
 {
     public async Task<bool> Handle(CreateVehiculoCommand request, CancellationToken cancellationToken)
     {
-        VehiculoEntity Vehiculo = new() { placa = request.placa, idmarca=request.idmarca,idtipodevehiculo=request.idtipodevehiculo };
+        VehiculoEntity Vehiculo = new() { placa = request.placa, idmarca=request.idmarca,idtipovehiculo=request.idtipovehiculo };
         return await _VehiculoRepository.SaveAsync(Vehiculo);
     }
 }

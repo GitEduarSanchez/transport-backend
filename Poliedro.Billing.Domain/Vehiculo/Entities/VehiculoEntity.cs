@@ -5,8 +5,8 @@ namespace Poliedro.Billing.Domain.Vehiculo.Entities;
 public class VehiculoEntity
 {
     [Key]
-    public int Idvehiculo { get; set; }
+    public int idvehiculo { get; set; }
     public string placa { get; set; }
     public int idmarca { get; set; }
-    public int idtipodevehiculo { get; set; }
+    public int idtipovehiculo { get; set; }
 }

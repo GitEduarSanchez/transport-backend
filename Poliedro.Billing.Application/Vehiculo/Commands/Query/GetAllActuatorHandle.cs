@@ -11,10 +11,10 @@ public class GetAllActuatorHandle(IVehiculoRepository _vehiculoRepository) : IRe
         var entities = await _vehiculoRepository.GetAllAsync();
         return entities.Select(vehiculo => new VehiculoDto
         (
-            Idvehiculo: vehiculo.Idvehiculo,
+            idvehiculo: vehiculo.idvehiculo,
             placa: vehiculo.placa,
             idmarca: vehiculo.idmarca,
-            idtipovehiculo: vehiculo.idtipodevehiculo
+            idtipovehiculo: vehiculo.idtipovehiculo
         ));
     }
 }

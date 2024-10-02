@@ -8,11 +8,11 @@ public class VehiculoConfiguration
 {
     public VehiculoConfiguration(EntityTypeBuilder<VehiculoEntity> builder)
     {
-        builder.ToTable("Vehiculo");
-        builder.HasKey(x => x.Id);
-        builder.Property(x => x.Id).HasColumnName("idvehiculo");
+        builder.ToTable("vehiculo");
+        builder.HasKey(x => x.idvehiculo);
+        builder.Property(x => x.idvehiculo).HasColumnName("idvehiculo");
         builder.Property(x => x.placa).HasColumnName("placa");
         builder.Property(x => x.idmarca).HasColumnName("idmarca");
-        builder.Property(x => x.idtipodevehiculo).HasColumnName("idtipodevehiculo");
+        builder.Property(x => x.idtipovehiculo).HasColumnName("idtipovehiculo");
     }
 }
