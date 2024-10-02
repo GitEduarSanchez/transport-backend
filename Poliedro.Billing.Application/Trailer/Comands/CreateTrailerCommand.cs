@@ -2,4 +2,4 @@
 
 namespace Poliedro.Billing.Application.Trailer.Commands.CreateServerCommand;
 
-public record CreateTrailerCommand(int idTrailer, String Descripcion, String serial) : IRequest<bool>;
+public record CreateTrailerCommand( String Descripcion, String serial) : IRequest<bool>;
