@@ -11,7 +11,7 @@ namespace Poliedro.Billing.Api.Controllers.v1.Server
     [Route("api/[controller]")]
     [ApiController]
     [TypeFilter(typeof(ExceptionManager))]
-    public class ConductorController(IMediator mediator) : ControllerBase
+    public class VehiculoController(IMediator mediator) : ControllerBase
     {
         [HttpGet]
         public async Task<IEnumerable<ConductorDto>> GetAll()

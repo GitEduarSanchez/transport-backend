@@ -8,9 +8,10 @@ public class TrailerConfiguration
 {
     public TrailerConfiguration(EntityTypeBuilder<TrailerEntity> builder)
     {
-        builder.ToTable("Trailer");
+        builder.ToTable("trailer");
         builder.HasKey(x => x.idTrailer);
-        builder.Property(x => x.Descripcion).HasColumnName("Descripcion");
+        builder.Property(x => x.idTrailer).HasColumnName("idtrailer");
+        builder.Property(x => x.Descripcion).HasColumnName("descripcion");
         builder.Property(x => x.serial).HasColumnName("serial");
     }
 }
