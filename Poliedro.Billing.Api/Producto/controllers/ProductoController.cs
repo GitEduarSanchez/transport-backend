@@ -3,6 +3,8 @@ using MediatR;
 using Microsoft.AspNetCore.Mvc;
 using Poliedro.Billing.Application.Common.Exeptions;
 using Poliedro.Billing.Application.Producto.Commands.CreateServerCommand;
+using Poliedro.Billing.Application.Producto.Dto;
+using Poliedro.Billing.Application.Producto.Query;
 
 namespace Poliedro.Billing.Api.Controllers.v1.Server
 {
@@ -11,10 +13,10 @@ namespace Poliedro.Billing.Api.Controllers.v1.Server
     [TypeFilter(typeof(ExceptionManager))]
     public class ProductoController(IMediator mediator) : ControllerBase
     {
-        [HttpGet("{id}")]
-        public string Get(int id)
+       [HttpGet]
+        public async Task<IEnumerable<productoDto>> GetAll()
         {
-            return "value";
+            return await mediator.Send(new GetAllActuatorsQuery());
         }
 
 
