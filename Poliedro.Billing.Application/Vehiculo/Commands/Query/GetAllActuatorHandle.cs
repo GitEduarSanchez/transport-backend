@@ -11,7 +11,7 @@ public class GetAllActuatorHandle(IVehiculoRepository _vehiculoRepository) : IRe
         var entities = await _vehiculoRepository.GetAllAsync();
         return entities.Select(vehiculo => new VehiculoDto
         (
-            Id: vehiculo.Id,
+            Idvehiculo: vehiculo.Idvehiculo,
             placa: vehiculo.placa,
             idmarca: vehiculo.idmarca,
             idtipovehiculo: vehiculo.idtipodevehiculo
