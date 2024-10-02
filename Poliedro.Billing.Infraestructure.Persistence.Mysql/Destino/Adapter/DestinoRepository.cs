@@ -6,6 +6,11 @@ namespace Poliedro.Billing.Infraestructure.Persistence.Mysql.Destino.Adapter;
 
 public class DestinoRepository(DataBaseContext context) : IDestinoRepository
 {
+    public Task<IEnumerable<DestinoEntity>> GetAllAsync()
+    {
+        throw new NotImplementedException();
+    }
+
     public async Task<bool> SaveAsync(DestinoEntity Destino)
     {
         await context.Destino.AddAsync(Destino);

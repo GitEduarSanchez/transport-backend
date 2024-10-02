@@ -9,7 +9,7 @@ public class DestinoHandle(IDestinoRepository _DestinoRepository) : IRequestHand
 {
     public async Task<bool> Handle(CreateDestinoCommand request, CancellationToken cancellationToken)
     {
-        DestinoEntity Destino = new() { Descripcion = request.Descripcion };
+        DestinoEntity Destino = new() { descripcion = request.Descripcion };
         return await _DestinoRepository.SaveAsync(Destino);
     }
 }
