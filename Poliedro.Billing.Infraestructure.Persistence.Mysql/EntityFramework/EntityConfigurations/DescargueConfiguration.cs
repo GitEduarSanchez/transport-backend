@@ -10,7 +10,7 @@ public class DescargueConfiguration
     public DescargueConfiguration(EntityTypeBuilder<DescargueEntity> builder)
     {
         builder.ToTable("Descargue");
-        builder.HasKey(x => x.iddescargue);
+        builder.HasKey(x => x.Id);
         builder.Property(x => x.descriocion).HasColumnName("descriocion");
     }
 
