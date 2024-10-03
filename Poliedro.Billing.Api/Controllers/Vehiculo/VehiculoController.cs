@@ -5,6 +5,7 @@ using Poliedro.Billing.Application.Common.Exeptions;
 using Poliedro.Billing.Application.Conductor.Commands.CreateServerCommand;
 using Poliedro.Billing.Application.Conductor.Dto;
 using Poliedro.Billing.Application.Conductor.Query;
+using System.ComponentModel.DataAnnotations;
 
 namespace Poliedro.Billing.Api.Controllers.v1.Server
 {
@@ -20,9 +21,10 @@ namespace Poliedro.Billing.Api.Controllers.v1.Server
         }
 
         [HttpGet("{id}")]
-        public string Get(int id)
+        public async Task<ConductorDto> GetAsync([FromRoute] int id)
         {
-            return "value";
+            var getConductorByIdQuery = new GetByIdConductorQuery(id);
+            return await mediator.Send(getConductorByIdQuery);
         }
 
 
