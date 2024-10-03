@@ -11,7 +11,7 @@ public class GetAllActuatorHandle(IDescargueRepository _DescargueRepository) : I
         var entities = await _DescargueRepository.GetAllAsync();
         return entities.Select(Descargue => new DescargueDto
         (
-            Id: Descargue.Id,
+            iddescargue: Descargue.iddescargue,
             descriocion: Descargue.descriocion
         ));
     }

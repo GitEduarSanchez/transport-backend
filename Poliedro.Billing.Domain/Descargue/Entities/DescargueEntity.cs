@@ -5,7 +5,7 @@ namespace Poliedro.Billing.Domain.Descargue.Entities;
 public class DescargueEntity
 {
     [Key]
-    public int Id { get; set; }
+    public int iddescargue { get; set; }
     public required string descriocion { get; set; }
 
 }
