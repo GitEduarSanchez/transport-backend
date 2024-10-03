@@ -5,4 +5,5 @@ namespace Poliedro.Billing.Domain.Trailer.Ports;
 public interface ITrailerRepository
 {
     Task<bool> SaveAsync(TrailerEntity Trailer);
+    Task<IEnumerable<TrailerEntity>> GetAllAsync();
 }

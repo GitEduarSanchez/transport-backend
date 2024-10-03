@@ -1,4 +1,4 @@
-﻿namespace Poliedro.Billing.Application.Conductor.Dto;
+﻿namespace Poliedro.Billing.Application.Trailer.Dto;
 
-public record ConductorDto(int Id, string Name);
+public record TrailerDto(int idtrailer, string Descripcion, string serial);
 

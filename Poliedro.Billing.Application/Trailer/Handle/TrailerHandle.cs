@@ -9,7 +9,7 @@ public class ConductorHandle(ITrailerRepository _TrailerRepository) : IRequestHa
 {
     public async Task<bool> Handle(CreateTrailerCommand request, CancellationToken cancellationToken)
     {
-        TrailerEntity conductor = new() { Descripcion = request.Descripcion, serial = request.serial};
-        return await _TrailerRepository.SaveAsync(conductor);
+        TrailerEntity Trailer = new() { Descripcion = request.Descripcion, serial = request.serial};
+        return await _TrailerRepository.SaveAsync(Trailer);
     }
 }
