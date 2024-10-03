@@ -1,14 +1,14 @@
 ﻿using MediatR;
-using Poliedro.Billing.Application.Conductor.Dto;
-using Poliedro.Billing.Domain.Conductor.Ports;
+using Poliedro.Billing.Application.ControlViajeProducto.Dto;
+using Poliedro.Billing.Domain.ControlViajeProducto.Ports;
 
-namespace Poliedro.Billing.Application.Conductor.Query;
+namespace Poliedro.Billing.Application.ControlViajeProducto.Query;
 
-public class GetByIdConductorHandle(IConductorRepository conductorRepository) : IRequestHandler<GetByIdConductorQuery, ConductorDto>
+public class GetByIdControlViajeProductoHandle(IControlViajeProductoRepository ControlViajeProductoRepository) : IRequestHandler<GetByIdControlViajeProductoQuery, ControlViajeProductoDto>
 {
-    public async Task<ConductorDto> Handle(GetByIdConductorQuery request, CancellationToken cancellationToken)
+    public async Task<ControlViajeProductoDto> Handle(GetByIdControlViajeProductoQuery request, CancellationToken cancellationToken)
     {
-        var getByIdConductor = await conductorRepository.GetById(request.Id);
-        return new ConductorDto(Id: getByIdConductor.Id, Name: getByIdConductor.Name);
+        var getByIdControlViajeProducto = await ControlViajeProductoRepository.GetById(request.idControlViajeProducto);
+        return new ControlViajeProductoDto(idControlViajeProducto: getByIdControlViajeProducto.idControlViajeProducto, idControlViaje: getByIdControlViajeProducto.idControlViaje,idProducto: getByIdControlViajeProducto.idProducto );
     }
 }
