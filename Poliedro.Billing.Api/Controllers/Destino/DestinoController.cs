@@ -5,6 +5,7 @@ using Poliedro.Billing.Application.Common.Exeptions;
 using Poliedro.Billing.Application.Destino.Commands.CreateServerCommand;
 using Poliedro.Billing.Application.Destino.Dto;
 using Poliedro.Billing.Application.Destino.Query;
+using System.ComponentModel.DataAnnotations;
 
 namespace Poliedro.Billing.Api.Controllers.v1.Server
 {
@@ -20,9 +21,10 @@ namespace Poliedro.Billing.Api.Controllers.v1.Server
         }
 
         [HttpGet("{id}")]
-        public string Get(int id)
+        public async Task<DestinoDto> GetAsync([FromRoute] int id)
         {
-            return "value";
+            var getDestinoByIdQuery = new GetByIdDestinoQuery(id);
+            return await mediator.Send(getDestinoByIdQuery);
         }
 
 
@@ -59,4 +61,5 @@ namespace Poliedro.Billing.Api.Controllers.v1.Server
             }
         }
     }
+    
 }
