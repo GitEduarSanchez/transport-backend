@@ -6,4 +6,5 @@ public interface IControlViajeRepository
 {
     Task<bool> SaveAsync(ControlViajeEntity controlViaje);
     Task<IEnumerable<ControlViajeEntity>> GetAllAsync();
+    Task<ControlViajeEntity> GetById(int idControlViaje);
 }

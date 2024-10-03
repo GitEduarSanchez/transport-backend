@@ -11,6 +11,7 @@ public class GetAllActuatorHandle(IControlViajeRepository _controlviajeRepositor
         var entities = await _controlviajeRepository.GetAllAsync();
         return entities.Select(controlviaje => new ControlViajeDto
         (
+            idControlViaje: controlviaje.idControlViaje,
             fecha: controlviaje.fecha, 
             guia: controlviaje.guia,
             idVehiculoTrailer: controlviaje.idVehiculoTrailer

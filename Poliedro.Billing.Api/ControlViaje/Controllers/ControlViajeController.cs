@@ -24,10 +24,11 @@ namespace Poliedro.Billing.Api.Controllers.v1.Server
 
        
 
-        [HttpGet("{id}")]
-        public string Get(int id)
+         [HttpGet("{id}")]
+        public async Task<ControlViajeDto> GetAsync([FromRoute] int id)
         {
-            return "value";
+            var getControlViajeByIdQuery = new GetByIdControlViajeQuery(id);
+            return await mediator.Send(getControlViajeByIdQuery);
         }
 
 
@@ -64,4 +65,6 @@ namespace Poliedro.Billing.Api.Controllers.v1.Server
             }
         }
     }
+
+  
 }
