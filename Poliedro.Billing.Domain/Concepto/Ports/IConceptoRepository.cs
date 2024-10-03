@@ -6,4 +6,5 @@ public interface IConceptoRepository
 {
     Task<bool> SaveAsync(ConceptoEntity concepto);
     Task<IEnumerable<ConceptoEntity>> GetAllAsync();
+    Task<ConceptoEntity> GetById(int Id);
 }

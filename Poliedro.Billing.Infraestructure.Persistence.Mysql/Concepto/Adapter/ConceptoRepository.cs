@@ -13,6 +13,11 @@ public class ConceptoRepository(DataBaseContext _context) : IConceptoRepository
         return await _context.Concepto.ToListAsync();
     }
 
+    public async Task<ConceptoEntity> GetById(int Id)
+    {
+        return await _context.Concepto.FirstAsync(x => x.IdConcepto == Id);
+    }
+
     public async Task<bool> SaveAsync(ConceptoEntity concepto)
     {
         await _context.Concepto.AddAsync(concepto);

@@ -5,6 +5,7 @@ using Poliedro.Billing.Application.Common.Exeptions;
 using Poliedro.Billing.Application.Concepto.Commands.CreateServerCommand;
 using Poliedro.Billing.Application.Concepto.Dto;
 using Poliedro.Billing.Application.Concepto.Query;
+using System.ComponentModel.DataAnnotations;
 
 namespace Poliedro.Billing.Api.Controllers.v1.Server
 {
@@ -13,17 +14,17 @@ namespace Poliedro.Billing.Api.Controllers.v1.Server
     [TypeFilter(typeof(ExceptionManager))]
     public class ConceptoController(IMediator mediator) : ControllerBase
     {
-
         [HttpGet]
         public async Task<IEnumerable<ConceptoDto>> GetAll()
         {
             return await mediator.Send(new GetAllConceptoQuery());
-        } 
+        }
 
         [HttpGet("{id}")]
-        public string Get(int id)
+        public async Task<ConceptoDto> GetAsync([FromRoute] int id)
         {
-            return "value";
+            var getConceptoByIdQuery = new GetByIdConceptoQuery(id);
+            return await mediator.Send(getConceptoByIdQuery);
         }
 
 
