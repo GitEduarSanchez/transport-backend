@@ -6,4 +6,5 @@ public interface IConductorRepository
 {
     Task<bool> SaveAsync(ConductorEntity conductor);
     Task<IEnumerable<ConductorEntity>> GetAllAsync();
+    Task<ConductorEntity> GetById(int Id);
 }
