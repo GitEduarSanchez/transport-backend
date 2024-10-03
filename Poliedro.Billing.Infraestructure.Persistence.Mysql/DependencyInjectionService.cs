@@ -23,6 +23,8 @@ public static class DependencyInjectionService
         services.AddTransient<IMessageProvider, MessageProvider>();
         services.AddTransient<IConductorRepository, ConductorRepository>();
         services.AddTransient<ICiudadRepository, CiudadRepository>();
+        services.AddTransient<IView_CiudadRepository, View_CiudadRepository>();
+
 
         return services;
     }
