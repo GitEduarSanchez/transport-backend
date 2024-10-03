@@ -6,4 +6,5 @@ public interface ICiudadRepository
 {
     Task<bool> SaveAsync(CiudadEntity ciudad);
     Task<IEnumerable<CiudadEntity>> GetAllAsync();
+    Task<CiudadEntity> GetById(int Id);
 }

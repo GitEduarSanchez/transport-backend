@@ -22,6 +22,13 @@ namespace Poliedro.Billing.Api.Controllers.v1.Server
         }
 
         [HttpGet("{id}")]
+        public async Task<CiudadDto> GetAsync([FromRoute] int id)
+        {
+            var getCiudadByIdQuery = new GetByIdCiudadQuery(id);
+            return await mediator.Send(getCiudadByIdQuery);
+        }
+
+        [HttpGet("{id}")]
         public string Get(int id)
         {
             return "value";

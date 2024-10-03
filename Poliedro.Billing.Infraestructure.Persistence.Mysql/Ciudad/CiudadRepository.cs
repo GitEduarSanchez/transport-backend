@@ -13,6 +13,11 @@ public class CiudadRepository(DataBaseContext _context) : ICiudadRepository
         return await _context.Ciudad.ToListAsync();
     }
 
+    public async Task<CiudadEntity> GetById(int Id)
+    {
+        return await _context.Ciudad.FirstAsync(x => x.Id == Id);
+    }
+
     public async Task<bool> SaveAsync(CiudadEntity Ciudad)
     {
           await _context.Ciudad.AddAsync(Ciudad);
