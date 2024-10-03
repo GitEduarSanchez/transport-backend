@@ -1,10 +1,10 @@
 ﻿using System.ComponentModel.DataAnnotations;
 
-namespace Poliedro.Billing.Domain.TipoVehiculo.Entities;
+namespace Poliedro.Billing.Domain.Conductor.Entities;
 
-public class TipoVehiculoEntity
+public class ConductorEntity
 {
     [Key]
-    public int idtipovehiculo { get; set; }
-    public string descripcion { get; set; }
+    public int Id { get; set; }
+    public string tipovehiculo { get; set; }
 }
