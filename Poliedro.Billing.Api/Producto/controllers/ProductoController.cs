@@ -19,6 +19,14 @@ namespace Poliedro.Billing.Api.Controllers.v1.Server
             return await mediator.Send(new GetAllActuatorsQuery());
         }
 
+         [HttpGet("{id}")]
+        public async Task<productoDto> GetAsync([FromRoute] int id)
+        {
+            var getproductoByIdQuery = new GetByIdproductoQuery(id);
+            return await mediator.Send(getproductoByIdQuery);
+        }
+
+
 
         [HttpPost]
                 
@@ -51,6 +59,16 @@ namespace Poliedro.Billing.Api.Controllers.v1.Server
             {
                 Console.WriteLine($"log: {failure.ErrorMessage}");
             }
+        }
+    }
+
+    internal class GetByIdproductoQuery : IRequest<productoDto>
+    {
+        private int id;
+
+        public GetByIdproductoQuery(int id)
+        {
+            this.id = id;
         }
     }
 }
