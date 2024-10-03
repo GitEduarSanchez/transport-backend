@@ -1,14 +1,14 @@
-﻿using Poliedro.Billing.Domain.Conductor.Entities;
-using Poliedro.Billing.Domain.Conductor.Ports;
+﻿using Poliedro.Billing.Domain.TipoVehiculo.Entities;
+using Poliedro.Billing.Domain.TipoVehiculo.Ports;
 using Poliedro.Billing.Infraestructure.Persistence.Mysql.Context;
 
-namespace Poliedro.Billing.Infraestructure.Persistence.Mysql.Conductor.Adapter;
+namespace Poliedro.Billing.Infraestructure.Persistence.Mysql.TipoVehiculo.Adapter;
 
-public class ConductorRepository(DataBaseContext context) : IConductorRepository
+public class TipoVehiculoRepository(DataBaseContext context) : ITipoVehiculoRepository
 {
-    public async Task<bool> SaveAsync(ConductorEntity conductor)
+    public async Task<bool> SaveAsync(TipoVehiculoEntity TipoVehiculo)
     {
-        await context.Conductor.AddAsync(conductor);
+        await context.TipoVehiculo.AddAsync(TipoVehiculo);
         return  await context.SaveChangesAsync() > 0;
     }
 }

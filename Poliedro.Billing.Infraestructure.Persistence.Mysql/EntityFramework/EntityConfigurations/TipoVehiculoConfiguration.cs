@@ -1,16 +1,16 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
-using Poliedro.Billing.Domain.Conductor.Entities;
+using Poliedro.Billing.Domain.TipoVehiculo.Entities;
 
 namespace Poliedro.Billing.Infraestructure.Persistence.Mysql.EntityFramework.EntityConfigurations;
 
-public class ConductorConfiguration
+public class TipoVehiculoConfiguration
 {
-    public ConductorConfiguration(EntityTypeBuilder<ConductorEntity> builder)
+    public TipoVehiculoConfiguration(EntityTypeBuilder<TipoVehiculoEntity> builder)
     {
-        builder.ToTable("conductor");
-        builder.HasKey(x => x.Id);
-        builder.Property(x => x.Id).HasColumnName("idconductor");
-        builder.Property(x => x.Name).HasColumnName("nombre");
+        builder.ToTable("TipoVehiculo");
+        builder.HasKey(x => x.idtipovehiculo);
+        builder.Property(x => x.idtipovehiculo).HasColumnName("idtipovehiculo");
+        builder.Property(x => x.descripcion).HasColumnName("descripcion");
     }
 }

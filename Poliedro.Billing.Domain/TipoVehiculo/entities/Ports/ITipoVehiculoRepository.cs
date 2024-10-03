@@ -1,8 +1,8 @@
-﻿using Poliedro.Billing.Domain.Conductor.Entities;
+﻿using Poliedro.Billing.Domain.TipoVehiculo.Entities;
 
-namespace Poliedro.Billing.Domain.Conductor.Ports;
+namespace Poliedro.Billing.Domain.TipoVehiculo.Ports;
 
-public interface IConductorRepository
+public interface ITipoVehiculoRepository
 {
-    Task<bool> SaveAsync(ConductorEntity conductor);
+    Task<bool> SaveAsync(TipoVehiculoEntity tipoVehiculo);
 }
