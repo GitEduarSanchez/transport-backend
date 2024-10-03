@@ -6,6 +6,7 @@ using Poliedro.Billing.Domain.ControlViajeProducto.Ports;
 using Poliedro.Billing.Domain.Ports;
 using Poliedro.Billing.Infraestructure.Persistence.Mysql.Adapter;
 using Poliedro.Billing.Infraestructure.Persistence.Mysql.Conductor.Adapter;
+using Poliedro.Billing.Infraestructure.Persistence.Mysql.ControlViajeProducto.Adapter;
 using Poliedro.Billing.Infraestructure.Persistence.Mysql.Context;
 
 namespace Poliedro.Billing.Infraestructure.Persistence.Mysql;
