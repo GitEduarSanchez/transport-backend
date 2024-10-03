@@ -12,6 +12,16 @@ public class DescargueRepository(DataBaseContext _context) : IDescargueRepositor
         return await _context.Descargue.ToListAsync();
     }
 
+    public async Task<DescargueEntity> GetById(int iddescargue)
+    {
+        return await _context.Descargue.FirstAsync(x => x.iddescargue == iddescargue);
+    }
+
+    public Task GetById(object id)
+    {
+        throw new NotImplementedException();
+    }
+
     public async Task<bool> SaveAsync(DescargueEntity descargue)
     {
         await _context.Descargue.AddAsync(descargue);
