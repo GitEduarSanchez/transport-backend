@@ -1,7 +1,7 @@
 ﻿using MediatR;
-using Poliedro.Billing.Application.Conductor.Dto;
+using Poliedro.Billing.Application.Trailer.Dto;
 
-namespace Poliedro.Billing.Application.Conductor.Query;
+namespace Poliedro.Billing.Application.Trailer.Query;
 
-public record GetAllActuatorsQuery: IRequest<IEnumerable<ConductorDto>>;
+public record GetAllTrailerQuery: IRequest<IEnumerable<TrailerDto>>;
 

@@ -1,18 +1,21 @@
 ﻿using MediatR;
-using Poliedro.Billing.Application.Conductor.Dto;
-using Poliedro.Billing.Domain.Conductor.Ports;
+using Poliedro.Billing.Application.Trailer.Dto;
+using Poliedro.Billing.Domain.Trailer.Ports;
 
-namespace Poliedro.Billing.Application.Conductor.Query;
+namespace Poliedro.Billing.Application.Trailer.Query;
 
-public class GetAllActuatorHandle(IConductorRepository _conductorRepository) : IRequestHandler<GetAllActuatorsQuery, IEnumerable<ConductorDto>>
+public class GetAllTrailerHandle(ITrailerRepository _TrailerRepository) : IRequestHandler<GetAllTrailerQuery, IEnumerable<TrailerDto>>
 {
-    public async Task<IEnumerable<ConductorDto>> Handle(GetAllActuatorsQuery request, CancellationToken cancellationToken)
+    public async Task<IEnumerable<TrailerDto>> Handle(GetAllTrailerQuery request, CancellationToken cancellationToken)
     {
-        var entities = await _conductorRepository.GetAllAsync();
-        return entities.Select(conductor => new ConductorDto
+        var entities = await _TrailerRepository.GetAllAsync();
+        return entities.Select(Trailer => new TrailerDto
         (
-            Id: conductor.Id,
-            Name: conductor.Name
+            idtrailer: Trailer.idtrailer,
+            descripcion: Trailer.descripcion,
+            serial: Trailer.serial
+
+
         ));
     }
 }
