@@ -4,5 +4,6 @@ namespace Poliedro.Billing.Domain.Concepto.Ports;
 
 public interface IConceptoRepository
 {
-    Task<bool> SaveAsync(ConceptoEntity Concepto);
+    Task<bool> SaveAsync(ConceptoEntity concepto);
+    Task<IEnumerable<ConceptoEntity>> GetAllAsync();
 }
