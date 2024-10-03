@@ -20,6 +20,11 @@ namespace Poliedro.Billing.Api.Controllers.v1.Server
             return await mediator.Send(new GetAllControlViajeProductoQuery());
         }
 
+        [HttpGet("{id}")]
+        public string Get(int id)
+        {
+            return "value";
+        }
 
         [HttpPost]
                 
