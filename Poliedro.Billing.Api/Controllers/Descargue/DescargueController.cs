@@ -5,6 +5,7 @@ using Poliedro.Billing.Application.Common.Exeptions;
 using Poliedro.Billing.Application.Descargue.Commands.CreateServerCommand;
 using Poliedro.Billing.Application.Descargue.Dto;
 using Poliedro.Billing.Application.Descargue.Query;
+using System.ComponentModel.DataAnnotations;
 
 namespace Poliedro.Billing.Api.Controllers.v1.Server
 {
@@ -20,9 +21,10 @@ namespace Poliedro.Billing.Api.Controllers.v1.Server
         }
 
         [HttpGet("{id}")]
-        public string Get(int id)
+        public async Task<DescargueDto> GetAsync([FromRoute] int id)
         {
-            return "value";
+            var getDescargueByIdQuery = new GetByIdDescargueQuery(id);
+            return await mediator.Send(getDescargueByIdQuery);
         }
 
 
