@@ -12,7 +12,8 @@ public class GetAllTrailerHandle(ITrailerRepository _TrailerRepository) : IReque
         return entities.Select(Trailer => new TrailerDto
         (
             idtrailer: Trailer.idTrailer,
-            Descripcion: Trailer.Descripcion
+            Descripcion: Trailer.Descripcion,
+            serial: Trailer.serial
         ));
     }
 }
