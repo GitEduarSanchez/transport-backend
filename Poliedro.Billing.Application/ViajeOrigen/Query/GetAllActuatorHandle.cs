@@ -14,9 +14,7 @@ public class GetAllViajeOrigenHandle(IViajeOrigenRepository _viajeorigenReposito
             idcontrolviaje_origen:ViajeOrigen.IdControlViajeOrigen,
             IdCuidad:ViajeOrigen.IdCiudad,
             IdOrigen:ViajeOrigen.IdOrigen,
-            IdControlViaje:ViajeOrigen.IdOrigen
-            
-
+            IdControlViaje:ViajeOrigen.IdOrigen 
         ));
     }
 }
