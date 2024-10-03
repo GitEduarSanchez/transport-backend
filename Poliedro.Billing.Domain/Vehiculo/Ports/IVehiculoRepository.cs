@@ -6,4 +6,5 @@ public interface IVehiculoRepository
 {
    Task<bool> SaveAsync(VehiculoEntity vehiculo);
    Task<IEnumerable<VehiculoEntity>> GetAllAsync();
+    Task GetByidvehiculo(object idevehiculo);
 }

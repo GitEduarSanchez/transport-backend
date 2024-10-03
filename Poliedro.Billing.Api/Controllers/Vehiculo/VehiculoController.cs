@@ -5,9 +5,6 @@ using Poliedro.Billing.Application.Common.Exeptions;
 using Poliedro.Billing.Application.Vehiculo.Commands.CreateServerCommand;
 using Poliedro.Billing.Application.Vehiculo.Dto;
 using Poliedro.Billing.Application.Vehiculo.Query;
-using Poliedro.Billing.Application.Conductor.Commands.CreateServerCommand;
-using Poliedro.Billing.Application.Conductor.Dto;
-using Poliedro.Billing.Application.Conductor.Query;
 using System.ComponentModel.DataAnnotations;
 
 namespace Poliedro.Billing.Api.Controllers.v1.Server
@@ -24,23 +21,23 @@ namespace Poliedro.Billing.Api.Controllers.v1.Server
         }
 
         [HttpGet("{id}")]
-        public async Task<ConductorDto> GetAsync([FromRoute] int id)
+        public async Task<VehiculoDto> GetAsync([FromRoute] int id)
         {
-            var getConductorByIdQuery = new GetByIdConductorQuery(id);
+            var getConductorByIdQuery = new GetByidvehiculoQuery(id);
             return await mediator.Send(getConductorByIdQuery);
         }
 
 
         [HttpPost]
                 
-        public async Task<ActionResult<bool>> Create([FromBody] CreateConductorCommand command)
+        public async Task<ActionResult<bool>> Create([FromBody] CreateVehiculoCommand command)
         {
             await mediator.Send(command);
             return CreatedAtAction(null, null);
         }
        
         [HttpPut("{id}")]
-        public void Put(int id, [FromBody] CreateConductorCommand command)
+        public void Put(int id, [FromBody] CreateVehiculoCommand command)
         {
         }
 

@@ -9,6 +9,7 @@ public class VehiculoEntity
     [Key]
     public int idvehiculo { get; set; }
     public string placa { get; set; }
-    public string idmarca { get; set; }
-    public string idtipovehiculo { get; set; }
+    public int idmarca { get; set; }
+    public int idtipovehiculo { get; set; }
+
 }
