@@ -12,6 +12,11 @@ public class EstadoRepository(DataBaseContext _context) : IEstadoRepository
         return await _context.Estado.ToListAsync();
     }
 
+    public async Task<EstadoEntity> GetById(int Id)
+    {
+        return await _context.Estado.FirstAsync(x => x.Id == Id);
+    }
+
     public async Task<bool> SaveAsync(EstadoEntity estado)
     {
         await _context.Estado.AddAsync(estado);

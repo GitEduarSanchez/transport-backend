@@ -20,9 +20,10 @@ namespace Poliedro.Billing.Api.Controllers.v1.Server
         }
 
         [HttpGet("{id}")]
-        public string Get(int id)
+        public async Task<EstadoDto> GetAsync([FromRoute] int id)
         {
-            return "value";
+            var getEstadoByIdQuery = new GetByIdEstadoQuery(id);
+            return await mediator.Send(getEstadoByIdQuery);
         }
 
 
