@@ -5,6 +5,9 @@ using Poliedro.Billing.Application.Common.Exeptions;
 using Poliedro.Billing.Application.Conductor.Commands.CreateServerCommand;
 using Poliedro.Billing.Application.Conductor.Dto;
 using Poliedro.Billing.Application.Conductor.Query;
+using Poliedro.Billing.Application.ViajeOrigen.Dto;
+using Poliedro.Billing.Application.ViajeOrigen.Query;
+using System.ComponentModel.DataAnnotations;
 
 namespace Poliedro.Billing.Api.Controllers.v1.Server
 {
@@ -14,15 +17,16 @@ namespace Poliedro.Billing.Api.Controllers.v1.Server
     public class VehiculoController(IMediator mediator) : ControllerBase
     {
         [HttpGet]
-        public async Task<IEnumerable<ConductorDto>> GetAll()
+        public async Task<IEnumerable<ViajeOrigenDto>> GetAll()
         {
-            return await mediator.Send(new GetAllActuatorsQuery());
+            return await mediator.Send(new GetAllViajeOrigenQuery());
         }
 
         [HttpGet("{id}")]
-        public string Get(int id)
+        public async Task<ConductorDto> GetAsync([FromRoute] int id)
         {
-            return "value";
+            var getConductorByIdQuery = new GetByIdConductorQuery(id);
+            return await mediator.Send(getConductorByIdQuery);
         }
 
 
