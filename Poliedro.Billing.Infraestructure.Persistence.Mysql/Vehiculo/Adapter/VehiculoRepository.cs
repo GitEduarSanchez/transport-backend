@@ -12,9 +12,14 @@ public class VehiculoRepository(DataBaseContext _context) : IVehiculoRepository
         return await _context.Vehiculo.ToListAsync();
     }
 
-    public async Task<bool> SaveAsync(VehiculoEntity Vehiculo)
+    public async Task<VehiculoEntity> GetById(int idvehiculo)
     {
-        await _context.Vehiculo.AddAsync(Vehiculo);
+        return await _context.Vehiculo.FirstAsync(x => x.idvehiculo == idvehiculo);
+    }
+
+    public async Task<bool> SaveAsync(VehiculoEntity vehiculo)
+    {
+        await _context.Vehiculo.AddAsync(vehiculo);
         return  await _context.SaveChangesAsync() > 0;
     }
 }

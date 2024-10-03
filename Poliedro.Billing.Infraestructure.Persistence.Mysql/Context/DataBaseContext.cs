@@ -9,8 +9,9 @@ namespace Poliedro.Billing.Infraestructure.Persistence.Mysql.Context;
 public class DataBaseContext(DbContextOptions options) : DbContext(options)
 {
   
-   public DbSet<ConductorEntity> Conductor { get; set; }
-     
+    public DbSet<ConductorEntity> Conductor { get; set; }
+    public DbSet<VehiculoEntity> Vehiculo { get; set; }
+    
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
         base.OnModelCreating(modelBuilder);
@@ -20,15 +21,7 @@ public class DataBaseContext(DbContextOptions options) : DbContext(options)
     private static void EntityConfiguration(ModelBuilder modelBuilder)
     {
         new ConductorConfiguration(modelBuilder.Entity<ConductorEntity>());
-    }
-}
-
-internal class VehiculoConfiguration
-{
-    private EntityTypeBuilder<VehiculoEntity> entityTypeBuilder;
-
-    public VehiculoConfiguration(EntityTypeBuilder<VehiculoEntity> entityTypeBuilder)
-    {
-        this.entityTypeBuilder = entityTypeBuilder;
+         new VehiculoConfiguration(modelBuilder.Entity<VehiculoEntity>());
+        
     }
 }
