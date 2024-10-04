@@ -2,10 +2,12 @@
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Poliedro.Billing.Domain.Conductor.Ports;
+using Poliedro.Billing.Domain.Origen.Ports;
 using Poliedro.Billing.Domain.Ports;
 using Poliedro.Billing.Infraestructure.Persistence.Mysql.Adapter;
 using Poliedro.Billing.Infraestructure.Persistence.Mysql.Conductor.Adapter;
 using Poliedro.Billing.Infraestructure.Persistence.Mysql.Context;
+using Poliedro.Billing.Infraestructure.Persistence.Mysql.Origen.Adapter;
 
 namespace Poliedro.Billing.Infraestructure.Persistence.Mysql;
 
@@ -20,6 +22,7 @@ public static class DependencyInjectionService
 
         services.AddTransient<IMessageProvider, MessageProvider>();
         services.AddTransient<IConductorRepository, ConductorRepository>();
+         services.AddTransient<IOrigenRepository, OrigenRepository>();
 
         return services;
     }
