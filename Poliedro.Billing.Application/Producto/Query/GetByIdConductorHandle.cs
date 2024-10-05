@@ -9,6 +9,6 @@ public class GetByIdproductoHandle(IProductoRepository ProductoRepository) : IRe
     public async Task<ProductoDto> Handle(GetByIdProductoQuery request, CancellationToken cancellationToken)
     {
         var getByIdproducto = await ProductoRepository.GetById(request.Id);
-        return new ProductoDto(Id: getByIdproducto.Id, Name: getByIdproducto.Name);
+        return new productoDto(Id: getByIdproducto.Id, Name: getByIdproducto.Name);
     }
 }
