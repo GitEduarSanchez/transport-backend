@@ -1,4 +1,5 @@
-﻿using FluentValidation.Results;
+﻿
+using FluentValidation.Results;
 using MediatR;
 using Microsoft.AspNetCore.Mvc;
 using Poliedro.Billing.Application.Common.Exeptions;

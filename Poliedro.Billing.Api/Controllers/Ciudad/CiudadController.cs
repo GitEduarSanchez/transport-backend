@@ -7,8 +7,6 @@ using Poliedro.Billing.Application.Ciudad.Dto;
 using Poliedro.Billing.Application.Ciudad.Query;
 
 namespace Poliedro.Billing.Api.Controllers.v1.Server
-
-
 {
     [Route("api/[controller]")]
     [ApiController]
@@ -28,12 +26,7 @@ namespace Poliedro.Billing.Api.Controllers.v1.Server
             return await mediator.Send(getCiudadByIdQuery);
         }
 
-        [HttpGet("{id}")]
-        public string Get(int id)
-        {
-            return "value";
-        }
-
+        
 
         [HttpPost]
                 
