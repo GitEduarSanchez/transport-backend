@@ -15,7 +15,7 @@ public class DestinoRepository(DataBaseContext _context) : IDestinoRepository
     
     public async Task<DestinoEntity> GetById(int Id)
     {
-        return await _context.Destino.FirstAsync(x => x.Id == Id);
+        return await _context.Destino.FirstAsync(x => x.iddestino == Id);
     }
 
     public async Task<bool> SaveAsync(DestinoEntity Destino)

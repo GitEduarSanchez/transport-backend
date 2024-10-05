@@ -10,8 +10,9 @@ public class DataBaseContext(DbContextOptions options) : DbContext(options)
 {
   
     public DbSet<ConductorEntity> Conductor { get; set; }
-    
- public DbSet<VehiculoEntity> Vehiculo { get; set; }
+
+    public DbSet<VehiculoEntity> Vehiculo { get; set; }
+
     public DbSet<DestinoEntity> Destino { get; set; }
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
@@ -23,9 +24,10 @@ public class DataBaseContext(DbContextOptions options) : DbContext(options)
     private static void EntityConfiguration(ModelBuilder modelBuilder)
     {
         new ConductorConfiguration(modelBuilder.Entity<ConductorEntity>());
+
         new DestinoConfiguration(modelBuilder.Entity<DestinoEntity>());
         
-         new VehiculoConfiguration(modelBuilder.Entity<VehiculoEntity>());
+        new VehiculoConfiguration(modelBuilder.Entity<VehiculoEntity>());
     }
 }
 

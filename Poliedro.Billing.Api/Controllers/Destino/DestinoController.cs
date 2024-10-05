@@ -61,5 +61,5 @@ namespace Poliedro.Billing.Api.Controllers.v1.Server
             }
         }
     }
-    
+
 }
