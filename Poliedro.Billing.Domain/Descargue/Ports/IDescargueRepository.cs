@@ -6,5 +6,6 @@ public interface IDescargueRepository
 {
     Task<bool> SaveAsync(DescargueEntity descargue);
     Task<IEnumerable<DescargueEntity>> GetAllAsync();
-    Task GetById(object id);
+    Task<DescargueEntity> GetById(string iddescargue);
+    Task<DescargueEntity> GetById(int Id);
 }
