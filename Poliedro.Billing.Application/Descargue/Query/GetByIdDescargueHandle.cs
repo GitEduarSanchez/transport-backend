@@ -4,11 +4,11 @@ using Poliedro.Billing.Domain.Descargue.Ports;
 
 namespace Poliedro.Billing.Application.Descargue.Query;
 
-public class GetByIdDescargueHandle(IDescargueRepository DescargueRepository) : IRequestHandler<GetByIdDescargueQuery, DescargueDto>
+public class GetByiddescargueHandle(IDescargueRepository DescargueRepository) : IRequestHandler<GetByiddescargueQuery, DescargueDto>
 {
-    public async Task<DescargueDto> Handle(GetByIdDescargueQuery request, CancellationToken cancellationToken)
+    public async Task<DescargueDto> Handle(GetByiddescargueQuery request, CancellationToken cancellationToken)
     {
-        var getByIdDescargue = await DescargueRepository.GetById(request.iddescargue);
-        return new DescargueDto(Id: getByIdDescargue.Id, descriocion: getByIdDescargue.descriocion);
+        var getByiddescargue = await DescargueRepository.GetById(request.iddescargue);
+        return new DescargueDto(iddescargue: getByiddescargue.iddescargue, descriocion: getByiddescargue.descriocion);
     }
 }

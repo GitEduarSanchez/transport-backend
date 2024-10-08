@@ -23,7 +23,7 @@ namespace Poliedro.Billing.Api.Controllers.v1.Server
         [HttpGet("{id}")]
         public async Task<DescargueDto> GetAsync([FromRoute] int id)
         {
-            var getDescargueByIdQuery = new GetByIdDescargueQuery(id);
+            var getDescargueByIdQuery = new GetByiddescargueQuery(id);
             return await mediator.Send(getDescargueByIdQuery);
         }
 
