@@ -13,16 +13,17 @@ namespace Poliedro.Billing.Api.Controllers.v1.Server
     [TypeFilter(typeof(ExceptionManager))]
     public class VehiculoController(IMediator mediator) : ControllerBase
     {
-        [HttpGet]
+          [HttpGet]
         public async Task<IEnumerable<VehiculoDto>> GetAll()
         {
             return await mediator.Send(new GetAllActuatorsQuery());
         }
 
         [HttpGet("{id}")]
-        public string Get(int id)
+        public async Task<VehiculoDto> GetAsync([FromRoute] int id)
         {
-            return "value";
+            var getVehiculoByIdQuery = new GetByidvehiculoQuery(id);
+            return await mediator.Send(getVehiculoByIdQuery);
         }
 
 
@@ -59,4 +60,6 @@ namespace Poliedro.Billing.Api.Controllers.v1.Server
             }
         }
     }
+
+   
 }
