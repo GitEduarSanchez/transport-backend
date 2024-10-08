@@ -9,9 +9,9 @@ public class ProductoConfiguration
     public ProductoConfiguration(EntityTypeBuilder<ProductoEntity> builder)
     {
         builder.ToTable("producto");
-        builder.HasKey(x => x.idProducto);
-        builder.Property(x => x.idProducto).HasColumnName("idproducto");
+        builder.HasKey(x => x.id);
+        builder.Property(x => x.id).HasColumnName("idproducto");
         builder.Property(x => x.descripcion).HasColumnName("descripcion");
-        builder.Property(x => x.UnidadMedida).HasColumnName("idunidad_medida");
+        builder.Property(x => x.idunidad_medida).HasColumnName("idunidad_medida");
     }
 }

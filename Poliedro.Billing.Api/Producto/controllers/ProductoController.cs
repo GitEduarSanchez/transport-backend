@@ -14,16 +14,16 @@ namespace Poliedro.Billing.Api.Controllers.v1.Server
     public class ProductoController(IMediator mediator) : ControllerBase
     {
        [HttpGet]
-        public async Task<IEnumerable<productoDto>> GetAll()
+        public async Task<IEnumerable<ProductoDto>> GetAll()
         {
             return await mediator.Send(new GetAllActuatorsQuery());
         }
 
          [HttpGet("{id}")]
-        public async Task<productoDto> GetAsync([FromRoute] int id)
+        public async Task<ProductoDto> GetAsync([FromRoute] int id)
         {
-            var getproductoByIdQuery = new GetByIdproductoQuery(id);
-            return await mediator.Send(getproductoByIdQuery);
+            var getProductoByIdQuery = new GetByIdProductoQuery(id);
+            return await mediator.Send(getProductoByIdQuery);
         }
 
 
@@ -60,15 +60,9 @@ namespace Poliedro.Billing.Api.Controllers.v1.Server
                 Console.WriteLine($"log: {failure.ErrorMessage}");
             }
         }
-    }
+    
 
-    internal class GetByIdproductoQuery : IRequest<productoDto>
-    {
-        private int id;
 
-        public GetByIdproductoQuery(int id)
-        {
-            this.id = id;
-        }
+        
     }
 }

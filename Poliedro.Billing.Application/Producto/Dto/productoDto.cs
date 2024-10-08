@@ -1,4 +1,4 @@
 ﻿namespace Poliedro.Billing.Application.Producto.Dto;
 
-public record productoDto(int Id, string descripcion, int idunidad_medida);
+public record ProductoDto(int Id, string descripcion, int idunidad_medida);
 
