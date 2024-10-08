@@ -9,6 +9,6 @@ public class GetByIdViajeOrigenHandle(IViajeOrigenRepository viajeorigenReposito
     public async Task<ViajeOrigenDto> Handle(GetByIdViajeOrigenQuery request, CancellationToken cancellationToken)
     {
         var getByIdViajeOrigen = await viajeorigenRepository.GetById(request.IdControlViaje);
-        return new ViajeOrigenDto(IdControlViajeOrigen: getByIdViajeOrigen.IdControlViajeOrigen, IdCuidad: getByIdViajeOrigen.IdCuidad,IdOrigen:getByIdViajeOrigen.IdOrigen,IdControlViaje:getByIdViajeOrigen.IdControlViaje);
+        return new ViajeOrigenDto(IdControlViajeOrigen: getByIdViajeOrigen.IdControlViajeOrigen, IdCiudad: getByIdViajeOrigen.IdCiudad,IdOrigen:getByIdViajeOrigen.IdOrigen,IdControlViaje:getByIdViajeOrigen.IdControlViaje);
     }
 }
