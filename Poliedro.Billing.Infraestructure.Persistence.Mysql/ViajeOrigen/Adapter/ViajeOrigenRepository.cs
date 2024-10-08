@@ -5,7 +5,7 @@ using Poliedro.Billing.Infraestructure.Persistence.Mysql.Context;
 
 namespace Poliedro.Billing.Infraestructure.Persistence.Mysql.ViajeOrigen.Adapter;
 
-public class ViajeOrigenRepository(DataBaseContext _context) : IviajeOrigenRepository
+public class ViajeOrigenRepository(DataBaseContext _context) : IViajeOrigenRepository
 {
     public async Task<bool> SaveAsync(ViajeOrigenEntity ViajeOrigen)
     {

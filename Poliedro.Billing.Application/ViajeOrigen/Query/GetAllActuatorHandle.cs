@@ -12,7 +12,7 @@ public class GetAllViajeOrigenHandle(IViajeOrigenRepository _viajeorigenReposito
         return entities.Select(ViajeOrigen => new ViajeOrigenDto
         (
             IdControlViajeOrigen:ViajeOrigen.IdControlViajeOrigen,
-            IdCuidad:ViajeOrigen.IdCuidad,
+            IdCiudad:ViajeOrigen.IdCiudad,
             IdOrigen:ViajeOrigen.IdOrigen,
             IdControlViaje:ViajeOrigen.IdOrigen 
         ));
