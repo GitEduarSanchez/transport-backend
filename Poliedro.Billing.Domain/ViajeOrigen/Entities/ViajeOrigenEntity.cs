@@ -8,5 +8,5 @@ public class ViajeOrigenEntity
     public int IdControlViajeOrigen{ get; set; }
     public int IdControlViaje{ get; set; }
     public int IdOrigen {get;set;}
-    public int IdCiudad{get;set;}
+    public int IdCuidad{get;set;}
 }

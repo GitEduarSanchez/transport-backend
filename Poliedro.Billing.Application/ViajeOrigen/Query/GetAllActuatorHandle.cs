@@ -11,8 +11,8 @@ public class GetAllViajeOrigenHandle(IViajeOrigenRepository _viajeorigenReposito
         var entities = await _viajeorigenRepository.GetAllAsync();
         return entities.Select(ViajeOrigen => new ViajeOrigenDto
         (
-            idcontrolviaje_origen:ViajeOrigen.IdControlViajeOrigen,
-            IdCuidad:ViajeOrigen.IdCiudad,
+            IdControlViajeOrigen:ViajeOrigen.IdControlViajeOrigen,
+            IdCuidad:ViajeOrigen.IdCuidad,
             IdOrigen:ViajeOrigen.IdOrigen,
             IdControlViaje:ViajeOrigen.IdOrigen 
         ));
