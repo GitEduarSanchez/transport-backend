@@ -19,10 +19,10 @@ namespace Poliedro.Billing.Api.Controllers.v1.Server
             return await mediator.Send(new GetAllViajeOrigenQuery());
         }
         [HttpGet("{id}")]
-        public async Task<ConceptoDto> GetAsync([FromRoute] int id)
+        public async Task<ViajeOrigenDto> GetAsync([FromRoute] int id)
         {
-            var getConductorByIdQuery = new GetByIdConceptoQuery(id);
-            return await mediator.Send(getConceptoByIdQuery);
+            var getViajeOrigenrByIdQuery = new GetByIdViajeOrigenQuery(id);
+            return await mediator.Send(getViajeOrigenrByIdQuery);
         }
 
 
