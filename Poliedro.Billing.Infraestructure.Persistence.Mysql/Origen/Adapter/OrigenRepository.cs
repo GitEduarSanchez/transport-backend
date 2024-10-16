@@ -13,7 +13,7 @@ public class OrigenRepository(DataBaseContext context) : IOrigenRepository
 
     public async Task<OrigenEntity> GetById(int Id)
     {
-        return await _context.Origen.FirstAsync(x => x.IdOrigen == Id);
+        return await _context.Origen.FirstAsync(x => x.Id == Id);
     }
 
     public async Task<bool> SaveAsync(OrigenEntity origen)

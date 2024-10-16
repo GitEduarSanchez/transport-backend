@@ -11,7 +11,7 @@ public class GetAllActuatorHandle(IOrigenRepository _origenRepository) : IReques
         var entities = await _origenRepository.GetAllAsync();
         return entities.Select(Origen => new OrigenDto
         (
-            IdOrigen: Origen.IdOrigen,
+            Id: Origen.Id,
             descripcion: Origen.descripcion
         ));
     }

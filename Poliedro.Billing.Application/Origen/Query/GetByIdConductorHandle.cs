@@ -8,7 +8,7 @@ public class GetByIdOrigenHandle(IOrigenRepository origenRepository) : IRequestH
 {
     public async Task<OrigenDto> Handle(GetByIdOrigenQuery request, CancellationToken cancellationToken)
     {
-        var getByIdOrigen = await origenRepository.GetById(request.IdOrigen);
-        return new OrigenDto(IdOrigen: getByIdOrigen.IdOrigen,descripcion: getByIdOrigen.descripcion);
+        var getByIdOrigen = await origenRepository.GetById(request.Id);
+        return new OrigenDto(Id: getByIdOrigen.Id,descripcion: getByIdOrigen.descripcion);
     }
 }
