@@ -19,9 +19,4 @@
     <ProjectReference Include="..\Poliedro.Billing.Domain\Poliedro.Billing.Domain.csproj" />
   </ItemGroup>
 
-  <ItemGroup>
-    <Folder Include="Server\Queries\" />
-    <Folder Include="Server\Validator\" />
-  </ItemGroup>
-
 </Project>

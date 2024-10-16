@@ -1,14 +1,13 @@
-﻿using Microsoft.AspNetCore.Hosting;
-using Microsoft.EntityFrameworkCore;
+﻿using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+using Poliedro.Billing.Domain.Concepto.Ports;
+using Poliedro.Billing.Domain.Conductor.Ports;
 using Poliedro.Billing.Domain.Ports;
-using Poliedro.Billing.Domain.Server.DomainService;
-using Poliedro.Billing.Domain.Server.Ports;
 using Poliedro.Billing.Infraestructure.Persistence.Mysql.Adapter;
+using Poliedro.Billing.Infraestructure.Persistence.Mysql.Concepto.Adapter;
+using Poliedro.Billing.Infraestructure.Persistence.Mysql.Conductor.Adapter;
 using Poliedro.Billing.Infraestructure.Persistence.Mysql.Context;
-using Poliedro.Billing.Infraestructure.Persistence.Mysql.Server.Adapters;
-using Poliedro.Billing.Infraestructure.Persistence.Mysql.Server.DomainService.Impl;
 
 namespace Poliedro.Billing.Infraestructure.Persistence.Mysql;
 
@@ -21,9 +20,11 @@ public static class DependencyInjectionService
             options => options.UseMySql(connectionString, ServerVersion.AutoDetect(connectionString)
         ));
 
-        services.AddScoped<IServerDomainService, ServerDomainService>();
-        services.AddScoped<IServerRepository, ServerRepository>();
         services.AddTransient<IMessageProvider, MessageProvider>();
+        services.AddTransient<IConductorRepository, ConductorRepository>();
+        services.AddTransient<IConceptoRepository, ConceptoRepository>();
+        
+        
 
         return services;
     }
