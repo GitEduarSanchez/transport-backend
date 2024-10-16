@@ -9,8 +9,8 @@ public class OrigenConfiguration
     public OrigenConfiguration(EntityTypeBuilder<OrigenEntity> builder)
     {
         builder.ToTable("origen");
-        builder.HasKey(x => x.Id);
-        builder.Property(x => x.Id).HasColumnName("idorigen");
+        builder.HasKey(x => x.IdOrigen);
+        builder.Property(x => x.IdOrigen).HasColumnName("idorigen");
         builder.Property(x => x.descripcion).HasColumnName("descripcion");
     }
 }

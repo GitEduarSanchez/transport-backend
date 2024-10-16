@@ -1,4 +1,4 @@
 ﻿namespace Poliedro.Billing.Application.Origen.Dto;
 
-public record OrigenDto(int Id, string descripcion);
+public record OrigenDto(int IdOrigen, string descripcion);
 

@@ -5,6 +5,6 @@ namespace Poliedro.Billing.Domain.Origen.Entities;
 public class OrigenEntity
 {
     [Key]
-    public int Id { get; set; }
+    public int IdOrigen { get; set; }
     public string descripcion { get; set; }
 }

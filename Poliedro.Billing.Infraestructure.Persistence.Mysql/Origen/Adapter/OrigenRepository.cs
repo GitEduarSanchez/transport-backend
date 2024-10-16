@@ -6,14 +6,19 @@ namespace Poliedro.Billing.Infraestructure.Persistence.Mysql.Origen.Adapter;
 
 public class OrigenRepository(DataBaseContext context) : IOrigenRepository
 {
-    public Task<IEnumerable<object>> GetAllAsync()
+       public async Task<IEnumerable<OrigenEntity>> GetAllAsync()
     {
-        throw new NotImplementedException();
+        return await _context.Origen.ToListAsync();
+    }
+
+    public async Task<OrigenEntity> GetById(int Id)
+    {
+        return await _context.Origen.FirstAsync(x => x.IdOrigen == Id);
     }
 
     public async Task<bool> SaveAsync(OrigenEntity origen)
     {
-        await context.Origen.AddAsync(origen);
-        return  await context.SaveChangesAsync() > 0;
+        await _context.Origen.AddAsync(origen);
+        return  await _context.SaveChangesAsync() > 0;
     }
 }

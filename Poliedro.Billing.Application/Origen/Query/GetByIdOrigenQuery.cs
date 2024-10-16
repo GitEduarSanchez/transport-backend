@@ -3,5 +3,5 @@ using Poliedro.Billing.Application.Origen.Dto;
 
 namespace Poliedro.Billing.Application.Origen.Query;
 
-public record GetByIdOrigenQuery(int Id): IRequest<OrigenDto>;
+public record GetByIdOrigenQuery(int IdOrigen): IRequest<OrigenDto>;
 
