@@ -1,4 +1,8 @@
 ﻿using Microsoft.EntityFrameworkCore;
+<<<<<<< HEAD
+=======
+using Poliedro.Billing.Domain.ControlViajeProducto.Entities;
+>>>>>>> origin/feature/ControllerControlViajeProducto
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
 using Poliedro.Billing.Domain.Conductor.Entities;
 using Poliedro.Billing.Domain.Origen.Entities;
@@ -12,10 +16,12 @@ public class DataBaseContext(DbContextOptions options) : DbContext(options)
     public DbSet<ConductorEntity> Conductor { get; set; }
 <<<<<<< HEAD
     public DbSet<OrigenEntity> Origen { get; set; }
-
+ public DbSet<VehiculoEntity> Vehiculo { get; set; }
 =======
  public DbSet<VehiculoEntity> Vehiculo { get; set; }
->>>>>>> origin/feature/ControllerConductor
+    public DbSet<ControlViajeProductoEntity> ControlViajeProducto { get; set; }
+
+>>>>>>> origin/feature/ControllerControlViajeProducto
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
         base.OnModelCreating(modelBuilder);
@@ -28,8 +34,9 @@ public class DataBaseContext(DbContextOptions options) : DbContext(options)
 <<<<<<< HEAD
          new OrigenConfiguration(modelBuilder.Entity<OrigenEntity>());
 =======
+        new ControlViajeProductoConfiguration(modelBuilder.Entity<ControlViajeProductoEntity>());
+>>>>>>> origin/feature/ControllerControlViajeProducto
          new VehiculoConfiguration(modelBuilder.Entity<VehiculoEntity>());
->>>>>>> origin/feature/ControllerConductor
     }
 }
 
