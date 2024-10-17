@@ -23,8 +23,5 @@ public class OrigenRepository(DataBaseContext _context) : IOrigenRepository
         return  await _context.SaveChangesAsync() > 0;
     }
 
-    Task<IEnumerable<object>> IOrigenRepository.GetAllAsync()
-    {
-        throw new NotImplementedException();
-    }
+
 }
