@@ -12,10 +12,15 @@ public class DataBaseContext(DbContextOptions options) : DbContext(options)
 {
   
     public DbSet<ConductorEntity> Conductor { get; set; }
+<<<<<<< HEAD
     public DbSet<CiudadEntity> Ciudad { get; set; }
     public DbSet<View_CiudadEntity> View_Ciudad { get; set; }
     public DbSet<VehiculoEntity> Vehiculo { get; set; }
 
+=======
+    public DbSet<DescargueEntity> Descargue { get; set; }
+ public DbSet<VehiculoEntity> Vehiculo { get; set; }
+>>>>>>> origin/releasecandidate/v1.0.0
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
         base.OnModelCreating(modelBuilder);
@@ -25,10 +30,14 @@ public class DataBaseContext(DbContextOptions options) : DbContext(options)
     private static void EntityConfiguration(ModelBuilder modelBuilder)
     {
         new ConductorConfiguration(modelBuilder.Entity<ConductorEntity>());
+<<<<<<< HEAD
         new CiudadConfiguration(modelBuilder.Entity<CiudadEntity>());
-        new DescargueConfiguration(modelBuilder.Entity<DescargueEntity>());
         new View_CiudadConfiguration(modelBuilder.Entity<View_CiudadEntity>());
         new VehiculoConfiguration(modelBuilder.Entity<VehiculoEntity>());
+=======
+        new DescargueConfiguration(modelBuilder.Entity<DescargueEntity>());
+         new VehiculoConfiguration(modelBuilder.Entity<VehiculoEntity>());
+>>>>>>> origin/releasecandidate/v1.0.0
     }
 }
 
