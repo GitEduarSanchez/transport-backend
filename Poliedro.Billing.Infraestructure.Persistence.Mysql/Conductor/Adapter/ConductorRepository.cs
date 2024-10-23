@@ -12,6 +12,7 @@ public class ConductorRepository(DataBaseContext _context) : IConductorRepositor
         return await _context.Conductor.ToListAsync();
     }
 
+     public async Task<ConductorEntity> GetById(int Id)
     public async Task<ConductorEntity> GetById(int Id)
     {
         return await _context.Conductor.FirstAsync(x => x.Id == Id);

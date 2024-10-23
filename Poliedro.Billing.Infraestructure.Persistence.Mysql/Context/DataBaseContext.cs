@@ -1,5 +1,7 @@
 ﻿using Microsoft.EntityFrameworkCore;
+using Poliedro.Billing.Domain.Ciudad.Entities;
 using Poliedro.Billing.Domain.ControlViajeProducto.Entities;
+using Poliedro.Billing.Domain.View_Ciudad.Entities;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
 using Poliedro.Billing.Domain.Conductor.Entities;
 using Poliedro.Billing.Domain.Estado.Entities;
@@ -13,8 +15,12 @@ public class DataBaseContext(DbContextOptions options) : DbContext(options)
   
     public DbSet<ConductorEntity> Conductor { get; set; }
     public DbSet<EstadoEntity> Estado { get; set; }
+    public DbSet<CiudadEntity> Ciudad { get; set; }
     public DbSet<DescargueEntity> Descargue { get; set; }
     
+    public DbSet<View_CiudadEntity> View_Ciudad { get; set; }
+    public DbSet<VehiculoEntity> Vehiculo { get; set; }
+
     public DbSet<ControlViajeProductoEntity> ControlViajeProducto { get; set; }
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
@@ -26,12 +32,14 @@ public class DataBaseContext(DbContextOptions options) : DbContext(options)
     private static void EntityConfiguration(ModelBuilder modelBuilder)
     {
         new ConductorConfiguration(modelBuilder.Entity<ConductorEntity>());
+        new CiudadConfiguration(modelBuilder.Entity<CiudadEntity>());
+        new View_CiudadConfiguration(modelBuilder.Entity<View_CiudadEntity>());
  feature/ControllerControlViajeProducto
         new ControlViajeProductoConfiguration(modelBuilder.Entity<ControlViajeProductoEntity>());
 
         new DescargueConfiguration(modelBuilder.Entity<DescargueEntity>());
  releasecandidate/v1.0.0
-         new VehiculoConfiguration(modelBuilder.Entity<VehiculoEntity>());
+        new VehiculoConfiguration(modelBuilder.Entity<VehiculoEntity>());
          new EstadoConfiguration(modelBuilder.Entity<EstadoEntity>());
     }
 }
