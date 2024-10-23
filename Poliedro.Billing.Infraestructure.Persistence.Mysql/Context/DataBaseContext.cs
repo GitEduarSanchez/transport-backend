@@ -4,6 +4,7 @@ using Poliedro.Billing.Domain.ControlViajeProducto.Entities;
 using Poliedro.Billing.Domain.View_Ciudad.Entities;
 using Poliedro.Billing.Domain.Conductor.Entities;
 using Poliedro.Billing.Domain.ControlViaje.Entities;
+using Poliedro.Billing.Domain.Estado.Entities;
 using Poliedro.Billing.Domain.Descargue.Entities;
 using Poliedro.Billing.Infraestructure.Persistence.Mysql.EntityFramework.EntityConfigurations;
 
@@ -14,9 +15,11 @@ public class DataBaseContext(DbContextOptions options) : DbContext(options)
 
     public DbSet<ConductorEntity> Conductor { get; set; }
     public DbSet<ControlViajeEntity> ControlViaje { get; set; }
+    public DbSet<EstadoEntity> Estado { get; set; }
     public DbSet<CiudadEntity> Ciudad { get; set; }
     public DbSet<DescargueEntity> Descargue { get; set; }
 
+    
     public DbSet<View_CiudadEntity> View_Ciudad { get; set; }
     public DbSet<VehiculoEntity> Vehiculo { get; set; }
 
@@ -40,6 +43,6 @@ public class DataBaseContext(DbContextOptions options) : DbContext(options)
         new DescargueConfiguration(modelBuilder.Entity<DescargueEntity>());
  releasecandidate/v1.0.0
         new VehiculoConfiguration(modelBuilder.Entity<VehiculoEntity>());
+         new EstadoConfiguration(modelBuilder.Entity<EstadoEntity>());
     }
-}
-
+internal class VehiculoConfiguration
