@@ -4,13 +4,13 @@ using Poliedro.Billing.Domain.Conductor.Entities;
 
 namespace Poliedro.Billing.Infraestructure.Persistence.Mysql.EntityFramework.EntityConfigurations;
 
-public class ConductorConfiguration
+public class TrailerConfiguration
 {
-    public ConductorConfiguration(EntityTypeBuilder<ConductorEntity> builder)
+    public TrailerConfiguration(EntityTypeBuilder<TrailerEntity> builder)
     {
-        builder.ToTable("conductor");
+        builder.ToTable("Trailer");
         builder.HasKey(x => x.Id);
-        builder.Property(x => x.Id).HasColumnName("idtrailer");
+        builder.Property(x => x.Id).HasColumnName("idconductor");
         builder.Property(x => x.Name).HasColumnName("nombre");
     }
 }
