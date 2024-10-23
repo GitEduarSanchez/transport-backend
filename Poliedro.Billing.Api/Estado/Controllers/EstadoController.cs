@@ -1,42 +1,42 @@
-﻿
-using FluentValidation.Results;
+﻿using FluentValidation.Results;
 using MediatR;
 using Microsoft.AspNetCore.Mvc;
 using Poliedro.Billing.Application.Common.Exeptions;
-using Poliedro.Billing.Application.Conductor.Commands.CreateServerCommand;
-using Poliedro.Billing.Application.Conductor.Dto;
-using Poliedro.Billing.Application.Conductor.Query;
+using Poliedro.Billing.Application.Estado.Commands.CreateServerCommand;
+using Poliedro.Billing.Application.Estado.Dto;
+using Poliedro.Billing.Application.Estado.Query;
 
 namespace Poliedro.Billing.Api.Controllers.v1.Server
 {
     [Route("api/[controller]")]
     [ApiController]
     [TypeFilter(typeof(ExceptionManager))]
-    public class ConductorController(IMediator mediator) : ControllerBase
+    public class EstadoController(IMediator mediator) : ControllerBase
     {
-        [HttpGet]
-        public async Task<IEnumerable<ConductorDto>> GetAll()
+          [HttpGet]
+        public async Task<IEnumerable<EstadoDto>> GetAll()
         {
-            return await mediator.Send(new GetAllActuatorsQuery());
+            return await mediator.Send(new GetAllEstadoQuery());
         }
 
         [HttpGet("{id}")]
-        public string Get(int id)
+        public async Task<EstadoDto> GetAsync([FromRoute] int id)
         {
-            return "value";
+            var getEstadoByIdQuery = new GetByIdEstadoQuery(id);
+            return await mediator.Send(getEstadoByIdQuery);
         }
 
 
         [HttpPost]
                 
-        public async Task<ActionResult<bool>> Create([FromBody] CreateConductorCommand command)
+        public async Task<ActionResult<bool>> Create([FromBody] CreateEstadoCommand command)
         {
             await mediator.Send(command);
             return CreatedAtAction(null, null);
         }
        
         [HttpPut("{id}")]
-        public void Put(int id, [FromBody] CreateConductorCommand command)
+        public void Put(int id, [FromBody] CreateEstadoCommand command)
         {
         }
 
@@ -60,4 +60,6 @@ namespace Poliedro.Billing.Api.Controllers.v1.Server
             }
         }
     }
+
+
 }
