@@ -3,7 +3,7 @@ using Poliedro.Billing.Domain.ControlViajeProducto.Entities;
 using Poliedro.Billing.Domain.ControlViajeProducto.Ports;
 using Poliedro.Billing.Infraestructure.Persistence.Mysql.Context;
 
-namespace Poliedro.Billing.Infraestructure.Persistence.Mysql.Conductor.Adapter;
+namespace Poliedro.Billing.Infraestructure.Persistence.Mysql.ControlViajeProducto.Adapter;
 
 public class ControlViajeProductoRepository(DataBaseContext _context) : IControlViajeProductoRepository
 {
