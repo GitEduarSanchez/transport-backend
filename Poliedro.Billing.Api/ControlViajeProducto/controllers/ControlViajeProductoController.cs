@@ -20,12 +20,13 @@ namespace Poliedro.Billing.Api.Controllers.v1.Server
             return await mediator.Send(new GetAllControlViajeProductoQuery());
         }
 
-        [HttpGet("{id}")]
+      [HttpGet("{id}")]
         public async Task<ControlViajeProductoDto> GetAsync([FromRoute] int id)
         {
             var getConductorByIdQuery = new GetByIdControlViajeProductoQuery(id);
             return await mediator.Send(getConductorByIdQuery);
         }
+
 
         [HttpPost]
                 
