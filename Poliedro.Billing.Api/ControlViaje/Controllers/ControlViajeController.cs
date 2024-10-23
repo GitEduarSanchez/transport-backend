@@ -2,42 +2,46 @@
 using MediatR;
 using Microsoft.AspNetCore.Mvc;
 using Poliedro.Billing.Application.Common.Exeptions;
-using Poliedro.Billing.Application.ControlViajeProducto.Commands.CreateServerCommand;
-using Poliedro.Billing.Application.ControlViajeProducto.Dto;
-using Poliedro.Billing.Application.ControlViajeProducto.Query;
+using Poliedro.Billing.Application.ControlViaje.Query;
+using Poliedro.Billing.Application.ControlViaje.Commands.CreateServerCommand;
+using Poliedro.Billing.Application.ControlViaje.Dto;
+
 
 namespace Poliedro.Billing.Api.Controllers.v1.Server
 {
     [Route("api/[controller]")]
     [ApiController]
     [TypeFilter(typeof(ExceptionManager))]
-    public class ControlViajeProductoController(IMediator mediator) : ControllerBase
+    public class ControlViajeController(IMediator mediator) : ControllerBase
     {
-       
+
+        
         [HttpGet]
-        public async Task<IEnumerable<ControlViajeProductoDto>> GetAll()
+        public async Task<IEnumerable<ControlViajeDto>> GetAll()
         {
-            return await mediator.Send(new GetAllControlViajeProductoQuery());
+            return await mediator.Send(new GetAllActuatorsQuery());
         }
 
-      [HttpGet("{id}")]
-        public async Task<ControlViajeProductoDto> GetAsync([FromRoute] int id)
+       
+
+         [HttpGet("{id}")]
+        public async Task<ControlViajeDto> GetAsync([FromRoute] int id)
         {
-            var getConductorByIdQuery = new GetByIdControlViajeProductoQuery(id);
-            return await mediator.Send(getConductorByIdQuery);
+            var getControlViajeByIdQuery = new GetByIdControlViajeQuery(id);
+            return await mediator.Send(getControlViajeByIdQuery);
         }
 
 
         [HttpPost]
                 
-        public async Task<ActionResult<bool>> Create([FromBody] CreateControlViajeProductoCommand command)
+        public async Task<ActionResult<bool>> Create([FromBody] CreateControlViajeCommand command)
         {
             await mediator.Send(command);
             return CreatedAtAction(null, null);
         }
        
         [HttpPut("{id}")]
-        public void Put(int id, [FromBody] CreateControlViajeProductoCommand command)
+        public void Put(int id, [FromBody] CreateControlViajeCommand command)
         {
         }
 
@@ -61,4 +65,6 @@ namespace Poliedro.Billing.Api.Controllers.v1.Server
             }
         }
     }
+
+  
 }
