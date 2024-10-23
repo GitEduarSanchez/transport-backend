@@ -9,7 +9,6 @@ using Poliedro.Billing.Domain.Estado.Ports;
  feature/ControllerControlViajeProducto
 using Poliedro.Billing.Domain.ControlViajeProducto.Ports;
 
-using Poliedro.Billing.Domain.Descargue.Ports;
 releasecandidate/v1.0.0
 using Poliedro.Billing.Domain.Ports;
 using Poliedro.Billing.Infraestructure.Persistence.Mysql.Adapter;
@@ -19,7 +18,6 @@ using Poliedro.Billing.Infraestructure.Persistence.Mysql.ControlViajeProducto.Ad
 using Poliedro.Billing.Infraestructure.Persistence.Mysql.Context;
 using Poliedro.Billing.Infraestructure.Persistence.Mysql.Destino.Adapter;
 using Poliedro.Billing.Infraestructure.Persistence.Mysql.Estado.Adapter;
-using Poliedro.Billing.Infraestructure.Persistence.Mysql.Descargue.Adapter;
 
 
 namespace Poliedro.Billing.Infraestructure.Persistence.Mysql;
@@ -44,7 +42,6 @@ public static class DependencyInjectionService
         services.AddTransient<IControlViajeProductoRepository, ControlViajeProductoRepository>();
 
 
-        services.AddTransient<IDescargueRepository, DescargueRepository>();
  releasecandidate/v1.0.0
         return services;
     }

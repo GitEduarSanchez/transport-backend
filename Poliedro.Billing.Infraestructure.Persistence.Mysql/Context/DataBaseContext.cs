@@ -6,7 +6,6 @@ using Poliedro.Billing.Domain.Conductor.Entities;
 using Poliedro.Billing.Domain.Destino.Entities;
 using Poliedro.Billing.Domain.ControlViaje.Entities;
 using Poliedro.Billing.Domain.Estado.Entities;
-using Poliedro.Billing.Domain.Descargue.Entities;
 using Poliedro.Billing.Infraestructure.Persistence.Mysql.EntityFramework.EntityConfigurations;
 
 namespace Poliedro.Billing.Infraestructure.Persistence.Mysql.Context;
@@ -18,7 +17,6 @@ public class DataBaseContext(DbContextOptions options) : DbContext(options)
     public DbSet<ControlViajeEntity> ControlViaje { get; set; }
     public DbSet<EstadoEntity> Estado { get; set; }
     public DbSet<CiudadEntity> Ciudad { get; set; }
-    public DbSet<DescargueEntity> Descargue { get; set; }
 
     
     public DbSet<View_CiudadEntity> View_Ciudad { get; set; }
@@ -42,7 +40,6 @@ public class DataBaseContext(DbContextOptions options) : DbContext(options)
  feature/ControllerControlViajeProducto
         new ControlViajeProductoConfiguration(modelBuilder.Entity<ControlViajeProductoEntity>());
 
-        new DescargueConfiguration(modelBuilder.Entity<DescargueEntity>());
         new DestinoConfiguration(modelBuilder.Entity<DestinoEntity>());
  releasecandidate/v1.0.0
         
