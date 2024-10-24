@@ -6,11 +6,9 @@ using Poliedro.Billing.Domain.Ciudad.Ports;
 using Poliedro.Billing.Domain.Conductor.Ports;
 using Poliedro.Billing.Domain.ControlViaje.Ports;
 using Poliedro.Billing.Domain.Estado.Ports;
- feature/ControllerControlViajeProducto
 using Poliedro.Billing.Domain.ControlViajeProducto.Ports;
 
 using Poliedro.Billing.Domain.Descargue.Ports;
-releasecandidate/v1.0.0
 using Poliedro.Billing.Domain.Ports;
 using Poliedro.Billing.Domain.Producto.Ports;
 using Poliedro.Billing.Infraestructure.Persistence.Mysql.Adapter;
@@ -45,12 +43,8 @@ public static class DependencyInjectionService
         services.AddTransient<IEstadoRepository, EstadoRepository>();
         services.AddTransient<ICiudadRepository, CiudadRepository>();
         services.AddTransient<IView_CiudadRepository, View_CiudadRepository>();
- feature/ControllerControlViajeProducto
         services.AddTransient<IControlViajeProductoRepository, ControlViajeProductoRepository>();
-
-
         services.AddTransient<IDescargueRepository, DescargueRepository>();
- releasecandidate/v1.0.0
         return services;
     }
 }
