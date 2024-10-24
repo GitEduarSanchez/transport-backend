@@ -14,6 +14,7 @@ public class DataBaseContext(DbContextOptions options) : DbContext(options)
     public DbSet<VehiculoEntity> Vehiculo { get; set; }
 
     public DbSet<DestinoEntity> Destino { get; set; }
+    public object ControlViaje { get; internal set; }
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
