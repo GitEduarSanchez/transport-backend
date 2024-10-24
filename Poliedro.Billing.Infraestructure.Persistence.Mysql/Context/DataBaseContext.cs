@@ -18,7 +18,6 @@ public class DataBaseContext(DbContextOptions options) : DbContext(options)
     public DbSet<EstadoEntity> Estado { get; set; }
     public DbSet<DescargueEntity> Descargue { get; set; }
     public DbSet<DestinoEntity> Destino { get; set; }
-    public object ControlViaje { get; internal set; }
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
         base.OnModelCreating(modelBuilder);
@@ -30,7 +29,6 @@ public class DataBaseContext(DbContextOptions options) : DbContext(options)
         new ConductorConfiguration(modelBuilder.Entity<ConductorEntity>());
         new ProductoConfiguration(modelBuilder.Entity<ProductoEntity>());
         new ConceptoConfiguration(modelBuilder.Entity<ConceptoEntity>());
-        new ControlViajeConfiguration(modelBuilder.Entity<ControlViajeEntity>());
         new DestinoConfiguration(modelBuilder.Entity<DestinoEntity>());
         new EstadoConfiguration(modelBuilder.Entity<EstadoEntity>());
     }
