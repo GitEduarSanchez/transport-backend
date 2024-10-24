@@ -4,6 +4,7 @@ using Poliedro.Billing.Domain.Ciudad.Entities;
 using Poliedro.Billing.Domain.ControlViajeProducto.Entities;
 using Poliedro.Billing.Domain.View_Ciudad.Entities;
 using Poliedro.Billing.Domain.Conductor.Entities;
+using Poliedro.Billing.Domain.Producto.Entities;
 using Poliedro.Billing.Domain.ControlViaje.Entities;
 using Poliedro.Billing.Domain.Estado.Entities;
 using Poliedro.Billing.Domain.Descargue.Entities;
@@ -15,6 +16,7 @@ public class DataBaseContext(DbContextOptions options) : DbContext(options)
 {
 
     public DbSet<ConductorEntity> Conductor { get; set; }
+    public DbSet<ProductoEntity> Producto { get; set; } 
     public DbSet<ConceptoEntity> Concepto { get; set; }
     public DbSet<ControlViajeEntity> ControlViaje { get; set; }
     public DbSet<EstadoEntity> Estado { get; set; }
@@ -36,6 +38,7 @@ public class DataBaseContext(DbContextOptions options) : DbContext(options)
     private static void EntityConfiguration(ModelBuilder modelBuilder)
     {
         new ConductorConfiguration(modelBuilder.Entity<ConductorEntity>());
+        new ProductoConfiguration(modelBuilder.Entity<ProductoEntity>());
         new ConceptoConfiguration(modelBuilder.Entity<ConceptoEntity>());
         new ControlViajeConfiguration(modelBuilder.Entity<ControlViajeEntity>());
         new CiudadConfiguration(modelBuilder.Entity<CiudadEntity>());
@@ -49,3 +52,6 @@ public class DataBaseContext(DbContextOptions options) : DbContext(options)
          new EstadoConfiguration(modelBuilder.Entity<EstadoEntity>());
     }
 internal class VehiculoConfiguration
+
+
+   
