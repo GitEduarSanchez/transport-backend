@@ -11,8 +11,11 @@ public class DestinoRepository(DataBaseContext context) : IDestinoRepository
         throw new NotImplementedException();
     }
 
-        return await _context.Destino.FirstAsync(x => x.Id == Id);
-        return await _context.Destino.FirstAsync(x => x.iddestino == Id);
+    public Task<DestinoEntity> GetById(int Id)
+    {
+        throw new NotImplementedException();
+    }
+
     public async Task<bool> SaveAsync(DestinoEntity Destino)
     {
         await context.Destino.AddAsync(Destino);

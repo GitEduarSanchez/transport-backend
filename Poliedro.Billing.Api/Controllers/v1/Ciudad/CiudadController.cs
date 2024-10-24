@@ -2,9 +2,7 @@
 using MediatR;
 using Microsoft.AspNetCore.Mvc;
 using Poliedro.Billing.Application.Common.Exeptions;
-using Poliedro.Billing.Application.Ciudad.Commands.CreateServerCommand;
-using Poliedro.Billing.Application.Ciudad.Dto;
-using Poliedro.Billing.Application.Ciudad.Query;
+using Poliedro.Billing.Application.Conductor.Query;
 
 namespace Poliedro.Billing.Api.Controllers.v1.Server
 {
@@ -16,7 +14,7 @@ namespace Poliedro.Billing.Api.Controllers.v1.Server
         [HttpGet]
         public async Task<IEnumerable<CiudadDto>> GetAll()
         {
-            return await mediator.Send(new GetAllActuatorsQuery());
+            return (IEnumerable<CiudadDto>)await mediator.Send(new GetAllActuatorsQuery());
         }
 
         [HttpGet("{id}")]
@@ -37,9 +35,6 @@ namespace Poliedro.Billing.Api.Controllers.v1.Server
         }
        
         [HttpPut("{id}")]
-        public void Put(int id, [FromBody] CreateCiudadCommand command)
-        {
-        }
 
         
         [HttpDelete("{id}")]
@@ -62,5 +57,21 @@ namespace Poliedro.Billing.Api.Controllers.v1.Server
         }
     }
 
-    
+    public class CiudadDto
+    {
+    }
+
+    internal class GetByIdCiudadQuery : IRequest<CiudadDto>
+    {
+        private int id;
+
+        public GetByIdCiudadQuery(int id)
+        {
+            this.id = id;
+        }
+    }
+
+    public class CreateCiudadCommand
+    {
+    }
 }

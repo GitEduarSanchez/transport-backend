@@ -13,7 +13,6 @@ using Poliedro.Billing.Infraestructure.Persistence.Mysql.Concepto.Adapter;
 using Poliedro.Billing.Infraestructure.Persistence.Mysql.Conductor.Adapter;
 using Poliedro.Billing.Infraestructure.Persistence.Mysql.Context;
 using Poliedro.Billing.Infraestructure.Persistence.Mysql.Producto.Adapter;
-using Poliedro.Billing.Infraestructure.Persistence.Mysql.Descargue.Adapter;
 using Poliedro.Billing.Infraestructure.Persistence.Mysql.Destino.Adapter;
 using Poliedro.Billing.Infraestructure.Persistence.Mysql.Estado.Adapter;
 
