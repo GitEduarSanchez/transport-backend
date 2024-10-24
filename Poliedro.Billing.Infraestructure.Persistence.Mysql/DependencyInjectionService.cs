@@ -1,22 +1,21 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
-using Poliedro.Billing.Domain.Ciudad.Ports;
+using Poliedro.Billing.Domain.Concepto.Ports;
 using Poliedro.Billing.Domain.Conductor.Ports;
 using Poliedro.Billing.Domain.Destino.Ports;
- feature/ControllerControlViajeProducto
-using Poliedro.Billing.Domain.ControlViajeProducto.Ports;
-
-using Poliedro.Billing.Domain.Descargue.Ports;
-releasecandidate/v1.0.0
+using Poliedro.Billing.Domain.ControlViaje.Ports;
+using Poliedro.Billing.Domain.Estado.Ports;
 using Poliedro.Billing.Domain.Ports;
+using Poliedro.Billing.Domain.Producto.Ports;
 using Poliedro.Billing.Infraestructure.Persistence.Mysql.Adapter;
-using Poliedro.Billing.Infraestructure.Persistence.Mysql.Ciudad.Adapter;
+using Poliedro.Billing.Infraestructure.Persistence.Mysql.Concepto.Adapter;
 using Poliedro.Billing.Infraestructure.Persistence.Mysql.Conductor.Adapter;
-using Poliedro.Billing.Infraestructure.Persistence.Mysql.ControlViajeProducto.Adapter;
 using Poliedro.Billing.Infraestructure.Persistence.Mysql.Context;
+using Poliedro.Billing.Infraestructure.Persistence.Mysql.Producto.Adapter;
 using Poliedro.Billing.Infraestructure.Persistence.Mysql.Destino.Adapter;
-using Poliedro.Billing.Infraestructure.Persistence.Mysql.Descargue.Adapter;
+using Poliedro.Billing.Infraestructure.Persistence.Mysql.Estado.Adapter;
+
 
 namespace Poliedro.Billing.Infraestructure.Persistence.Mysql;
 
@@ -32,15 +31,12 @@ public static class DependencyInjectionService
         services.AddTransient<IMessageProvider, MessageProvider>();
         services.AddTransient<IConductorRepository, ConductorRepository>();
         services.AddTransient<IDestinoRepository, DestinoRepository>();
-        services.AddTransient<ICiudadRepository, CiudadRepository>();
-        services.AddTransient<IView_CiudadRepository, View_CiudadRepository>();
- feature/ControllerControlViajeProducto
-        services.AddTransient<IControlViajeProductoRepository, ControlViajeProductoRepository>();
-
-
-
-        services.AddTransient<IDescargueRepository, DescargueRepository>();
- releasecandidate/v1.0.0
+        services.AddTransient<IProductoRepository, ProductoRepository>();
+        services.AddTransient<IConceptoRepository, ConceptoRepository>();
+        
+        
+        services.AddTransient<IControlViajeRepository, ControlViaje.Adapter.ControlViajeRepository>();
+        services.AddTransient<IEstadoRepository, EstadoRepository>();
         return services;
     }
 }
