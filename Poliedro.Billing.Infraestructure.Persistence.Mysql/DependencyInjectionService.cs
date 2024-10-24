@@ -1,14 +1,18 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+using Poliedro.Billing.Domain.Concepto.Ports;
 using Poliedro.Billing.Domain.Conductor.Ports;
 using Poliedro.Billing.Domain.Destino.Ports;
 using Poliedro.Billing.Domain.ControlViaje.Ports;
 using Poliedro.Billing.Domain.Estado.Ports;
 using Poliedro.Billing.Domain.Ports;
+using Poliedro.Billing.Domain.Producto.Ports;
 using Poliedro.Billing.Infraestructure.Persistence.Mysql.Adapter;
+using Poliedro.Billing.Infraestructure.Persistence.Mysql.Concepto.Adapter;
 using Poliedro.Billing.Infraestructure.Persistence.Mysql.Conductor.Adapter;
 using Poliedro.Billing.Infraestructure.Persistence.Mysql.Context;
+using Poliedro.Billing.Infraestructure.Persistence.Mysql.Producto.Adapter;
 using Poliedro.Billing.Infraestructure.Persistence.Mysql.Descargue.Adapter;
 using Poliedro.Billing.Infraestructure.Persistence.Mysql.Destino.Adapter;
 using Poliedro.Billing.Infraestructure.Persistence.Mysql.Estado.Adapter;
@@ -28,9 +32,12 @@ public static class DependencyInjectionService
         services.AddTransient<IMessageProvider, MessageProvider>();
         services.AddTransient<IConductorRepository, ConductorRepository>();
         services.AddTransient<IDestinoRepository, DestinoRepository>();
+        services.AddTransient<IProductoRepository, ProductoRepository>();
+        services.AddTransient<IConceptoRepository, ConceptoRepository>();
+        
+        
         services.AddTransient<IControlViajeRepository, ControlViaje.Adapter.ControlViajeRepository>();
         services.AddTransient<IEstadoRepository, EstadoRepository>();
-
         return services;
     }
 }
