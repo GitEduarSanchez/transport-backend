@@ -29,7 +29,6 @@ public class DataBaseContext(DbContextOptions options) : DbContext(options)
         new ConductorConfiguration(modelBuilder.Entity<ConductorEntity>());
         new ProductoConfiguration(modelBuilder.Entity<ProductoEntity>());
         new ConceptoConfiguration(modelBuilder.Entity<ConceptoEntity>());
-        new ControlViajeConfiguration(modelBuilder.Entity<ControlViajeEntity>());
         new DestinoConfiguration(modelBuilder.Entity<DestinoEntity>());
         new EstadoConfiguration(modelBuilder.Entity<EstadoEntity>());
     }
